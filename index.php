@@ -9,7 +9,7 @@ require "assets/includes/css.php";
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Einkaufsliste by MATX</title>
+    <title>Einkaufslfewfewiste by MATX</title>
 </head>
 <body>
     <!-- NAVBAR-->
