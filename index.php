@@ -9,7 +9,7 @@ require "assets/includes/css.php";
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Einkaufslfewfewiste by MATX</title>
+    <title>Einkaufsliste by MATX</title>
 </head>
 <body>
     <!-- NAVBAR-->
@@ -25,7 +25,7 @@ require "assets/includes/css.php";
         <div class="row">
             <div class="col-12 text-center">
                 <br>
-                <h1>Einkaufsliste</h1>
+                <h1>Einkaufslfweiste</h1>
             </div>
         </div>
         <!-- Script für Alert -->
