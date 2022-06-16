@@ -25,7 +25,7 @@ require "assets/includes/css.php";
         <div class="row">
             <div class="col-12 text-center">
                 <br>
-                <h1>Einkaufslfweiste</h1>
+                <h1>Einkaufslfwefewiste</h1>
             </div>
         </div>
         <!-- Script für Alert -->
