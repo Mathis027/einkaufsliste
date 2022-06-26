@@ -70,9 +70,6 @@ if(!empty($_POST)) {
     }
     $con->close();
 }
-$json = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6LeIm58gAAAAAPmWsUhnAy1blwIR05ErBXYw8-qH&response='.$_POST['g-recaptcha-response']);
-$data = json_decode($json);
-var_dump($data);
 ?>
 
 <!DOCTYPE html>
@@ -89,6 +86,13 @@ var_dump($data);
 <body>
 <div class="register">
     <h1>Registrieren</h1>
+    <script type="text/javascript">
+        var onloadCallback = function() {
+            grecaptcha.render('form', {
+                'sitekey' : 'your_site_key'
+            });
+        };
+    </script>
     <form id="register-form"action="" method="post" autocomplete="off">
         <label for="username">
             <i class="fas fa-user"></i>
