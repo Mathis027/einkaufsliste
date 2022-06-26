@@ -10,6 +10,11 @@ function setChecked(){
             "checked" => "checked",
             "id" => $id,
         ]);
+        $setTimeChecked = $einkaufdb->prepare("UPDATE `einkauf` SET `time` = :time WHERE `einkauf`.`ListeID` = :id");
+        $setTimeChecked->execute([
+            "id" => $id,
+            "time" => "30",
+        ]);
         #echo "EIntrag wurde gechecked und ID ist $id";
     } elseif(isset($_POST["notchecked"])) {
         $id = $_POST["notchecked"];

@@ -107,12 +107,18 @@ function liste(){
                     <input name="id" type="hidden" id="id" value=" <?php echo $item["ListeID"] ?>">
                     <div class="form-check">
                         <input class="form-check-input uncheckedSent" value="<?php echo $item["ListeID"] ?>" name="notchecked" <?php echo $item["checked"] ?> type="checkbox">
+                        <p style="position: absolute"><?php echo $item["time"] ?></p>
+
                     </div>
                 </form></td>
         </tr>
+
     <?php endforeach;?>
     </tbody>
 </table>
+    <?php $time = $item["time"];
+
+    ?>
 <script src="assets/js/artikel.js"></script>
 
   <?php return ob_get_clean();
