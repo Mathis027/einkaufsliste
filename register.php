@@ -15,18 +15,25 @@ function registerUser() {
             if (empty($_POST["register-password"])) {
                 echo "Bitte gib ein Passwort ein!";
             } else {
-                $password = password_hash($_POST["register-password"], PASSWORD_DEFAULT);
+                $email = $_POST["email"];
+                $useremail = geteinkaufUsersDB()->query("SELECT email FROM users WHERE email='$email'");
+                    if($useremail >0) {
+                        $password = password_hash($_POST["register-password"], PASSWORD_DEFAULT);
 
-                $sendregistration = geteinkaufUsersDB()->prepare("INSERT INTO `users` (`name`, `email`, `password`) VALUES (:name, :email, :password)");
-                $sendregistration->execute([
-                    "name" => $_POST["register-name"],
-                    "email" => $_POST["register-email"],
-                    "password" => $password,
-                ]);
+                        $sendregistration = geteinkaufUsersDB()->prepare("INSERT INTO `users` (`name`, `email`, `password`) VALUES (:name, :email, :password)");
+                        $sendregistration->execute([
+                            "name" => $_POST["register-name"],
+                            "email" => $_POST["register-email"],
+                            "password" => $password,
+                        ]);
+                        echo "Du wurdest erfolgreich registriert";
+                    } else{
+                        echo "Email exisiteirt bereits";
+                    }
+                }
             }
         }
     }
-}
 registerUser();
 ?>
 <section class="h-100">
