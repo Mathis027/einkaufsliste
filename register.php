@@ -1,7 +1,34 @@
 <?php
 require "assets/header/loader.php";
 require "assets/header/navbar.php";
-require "assets/includes/css.php"; ?>
+require "assets/includes/css.php";
+require "assets/includes/connect.php";
+session_start();
+
+function registerUser() {
+    if (empty($_POST["register-name"])) {
+        echo "Bitte gebe einen Benutzernamen ein";
+    } else {
+        if (empty($_POST["register-email"])) {
+            echo "Bitte gebe eine Email ein";
+        } else {
+            if (empty($_POST["register-password"])) {
+                echo "Bitte gib ein Passwort ein!";
+            } else {
+                $password = password_hash($_POST["register-password"], PASSWORD_DEFAULT);
+
+                $sendregistration = geteinkaufUsersDB()->prepare("INSERT INTO `users` (`name`, `email`, `password`) VALUES (:name, :email, :password)");
+                $sendregistration->execute([
+                    "name" => $_POST["register-name"],
+                    "email" => $_POST["register-email"],
+                    "password" => $password,
+                ]);
+            }
+        }
+    }
+}
+registerUser();
+?>
 <section class="h-100">
     <div class="container h-100">
         <div class="row justify-content-sm-center h-100">
@@ -11,25 +38,25 @@ require "assets/includes/css.php"; ?>
                 <div class="card shadow-lg">
                     <div class="card-body p-5">
                         <h1 class="fs-4 card-title fw-bold mb-4">Register</h1>
-                        <form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+                        <form action="" method="POST" name="register" class="needs-validation" novalidate="" autocomplete="off">
                             <div class="mb-3">
                                 <div class="input-group input-group-outline my-3">
                                     <label class="form-label">Email</label>
-                                    <input type="email" class="form-control">
+                                    <input name="register-email" type="email" class="form-control">
                                 </div>
                             </div>
 
                             <div class="mb-3">
                                 <div class="input-group input-group-outline my-3">
-                                    <label class="form-label">Username</label>
-                                    <input type="text" class="form-control">
+                                    <label class="form-label">Name</label>
+                                    <input name="register-name"type="text" class="form-control">
                                 </div>
                             </div>
 
                             <div class="mb-3">
                                 <div class="input-group input-group-outline my-3">
                                     <label class="form-label">Passwort</label>
-                                    <input type="password" class="form-control">
+                                    <input name="register-password" type="password" class="form-control">
                                 </div>
                             </div>
 
@@ -38,7 +65,7 @@ require "assets/includes/css.php"; ?>
                             </p>
 
                             <div class="align-items-center d-flex">
-                                <button type="submit" class="btn btn-primary ms-auto">
+                                <button onclick="<?php registerUser(); ?>" type="submit" class="btn btn-primary ms-auto">
                                     Register
                                 </button>
                             </div>
@@ -57,4 +84,3 @@ require "assets/includes/css.php"; ?>
         </div>
     </div>
 </section>
-
