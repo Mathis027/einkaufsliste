@@ -8,12 +8,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="#" class="nav-item nav-link">Meine Listen</a>
+                <a href="/list/mylists.php" class="nav-item nav-link">Meine Listen</a>
                 <a href="#" class="nav-item nav-link">Mein Profil</a>
                 <a href="#" class="nav-item nav-link">Meine Mitglieder</a>
             </div>
             <div class="navbar-nav ms-auto">
-                <button class="btn bg-gradient-primary mb-0" onclick="window.location.href='login.php'">Login</button>
+                <?php if(!isset($_SESSION["id"])){ ?>
+                    <button class="btn bg-gradient-primary mb-0" onclick="window.location.href='login.php'">Login</button>
+                <?php } ?>
+                <?php if(isset($_SESSION["id"])){ ?>
+                    <button class="btn bg-gradient-primary mb-0" onclick="window.location.href='logout.php'">Logout</button>
+                <?php } ?>
+
+
+
             </div>
         </div>
     </div>

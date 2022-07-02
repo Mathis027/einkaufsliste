@@ -18,6 +18,6 @@
 <!-- Theme JS -->
 <link href="/assets/cssTheme/css/material-kit.css" rel="stylesheet">
 <script src="/assets/cssTheme/js/material-kit.js"></script>
-
+<script src="https://kit.fontawesome.com/88347fd530.js" crossorigin="anonymous"></script>
 
 <!-- Site Loader -->

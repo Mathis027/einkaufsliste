@@ -1,6 +1,35 @@
-<?php require "assets/header/loader.php";
+<?php
+session_start();
+require "assets/header/loader.php";
 require "assets/includes/css.php";
- require "assets/header/navbar.php";?>
+require "assets/header/navbar.php";
+require "assets/includes/connect.php";
+
+if(isset($_SESSION["id"])) {
+    header("Location: index.php");
+}
+function loginUser(){
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    if(!empty($email) && !empty(($password))) {
+            $statement = geteinkaufUsersDB()->prepare("SELECT * FROM users WHERE email = :email");
+            $result = $statement->execute(array('email' => $email));
+            $user = $statement->fetch();
+            if(password_verify($password, $user["password"])) {
+                $_SESSION["id"] = $user["id"];
+                $_SESSION["name"] = $user["name"];
+                $_SESSION["email"] = $user["email"];
+                header("Refresh:0");
+            } else {
+                echo "Passwort oder Email Adresse ist falsch";
+
+            }
+    }
+
+}
+loginUser();
+ ?>
 <section class="h-100">
     <div class="container h-100">
         <div class="row justify-content-sm-center h-100">
@@ -14,14 +43,14 @@ require "assets/includes/css.php";
                             <div class="mb-3">
                                 <div class="input-group input-group-outline my-3">
                                     <label class="form-label">Email</label>
-                                    <input type="email" class="form-control">
+                                    <input name="email" type="email" class="form-control">
                                 </div>
                             </div>
 
                             <div class="mb-3">
                                 <div class="input-group input-group-outline my-3">
                                     <label class="form-label">Passwort</label>
-                                    <input type="password" class="form-control">
+                                    <input name="password" type="password" class="form-control">
                                 </div>
                             </div>
 

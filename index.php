@@ -2,15 +2,22 @@
 require "assets/header/loader.php";
 require_once "assets/includes/list.php";
 require "assets/includes/css.php";
+session_start();
+
+if(!isset($_SESSION["id"])) {
+    header("Location: login.php");
+
+}
+
+// If the user is not logged in redirect to the login page...
 ?>
 
 <html lang="en">
-<head>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Einkaufsliste by MATX</title>
-</head>
+
 <body>
     <!-- NAVBAR-->
     <?php require "assets/header/navbar.php" ?>

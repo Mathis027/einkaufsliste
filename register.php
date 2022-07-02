@@ -1,39 +1,61 @@
 <?php
+session_start();
+
 require "assets/header/loader.php";
 require "assets/header/navbar.php";
 require "assets/includes/css.php";
 require "assets/includes/connect.php";
-session_start();
 
+if(isset($_SESSION["id"])) {
+    header("Location: index.php");
+}
+// If the user is not logged in redirect to the login page...
 function registerUser() {
-    if (empty($_POST["register-name"])) {
-        echo "Bitte gebe einen Benutzernamen ein";
-    } else {
-        if (empty($_POST["register-email"])) {
-            echo "Bitte gebe eine Email ein";
+    if($_GET["register"] == 1){
+        $name = $_POST["register-name"];
+        $email = $_POST["register-email"];
+        $password = $_POST["register-password"];
+        if (empty($name)) {
+            echo "<div class='error'>Bitte gebe einen Namen ein</div>";
         } else {
-            if (empty($_POST["register-password"])) {
-                echo "Bitte gib ein Passwort ein!";
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo "<div class='error'>Bitte eine gültige Email eingeben</div>";
             } else {
-                $email = $_POST["email"];
-                $useremail = geteinkaufUsersDB()->query("SELECT email FROM users WHERE email='$email'");
-                    if($useremail >0) {
+                if (empty($password)) {
+                    echo  "<div class='error'>Bitte vergebe ein Passwort</div>";
+                } else {
+                    $statement = geteinkaufUsersDB()->prepare("SELECT * FROM users WHERE email = :email");
+                    $result = $statement->execute(array('email' => $email));
+                    $user = $statement->fetch();
+
+                    if (!$user) {
                         $password = password_hash($_POST["register-password"], PASSWORD_DEFAULT);
 
                         $sendregistration = geteinkaufUsersDB()->prepare("INSERT INTO `users` (`name`, `email`, `password`) VALUES (:name, :email, :password)");
                         $sendregistration->execute([
-                            "name" => $_POST["register-name"],
-                            "email" => $_POST["register-email"],
+                            "name" => $name,
+                            "email" => $email,
                             "password" => $password,
                         ]);
                         echo "Du wurdest erfolgreich registriert";
-                    } else{
-                        echo "Email exisiteirt bereits";
+                        $statement = geteinkaufUsersDB()->prepare("SELECT * FROM users WHERE email = :email");
+                        $result = $statement->execute(array('email' => $email));
+                        $user = $statement->fetch();
+                        $_SESSION["id"] = $user["id"];
+                        $_SESSION["name"] = $user["name"];
+                        $_SESSION["email"] = $user["email"];
+
+                    } else {
+                        echo "<div class='error'>Email exisitiert bereits</div>";
+
                     }
+
                 }
             }
         }
     }
+
+}
 registerUser();
 ?>
 <section class="h-100">
@@ -45,13 +67,8 @@ registerUser();
                 <div class="card shadow-lg">
                     <div class="card-body p-5">
                         <h1 class="fs-4 card-title fw-bold mb-4">Register</h1>
-                        <form action="" method="POST" name="register" class="needs-validation" novalidate="" autocomplete="off">
-                            <div class="mb-3">
-                                <div class="input-group input-group-outline my-3">
-                                    <label class="form-label">Email</label>
-                                    <input name="register-email" type="email" class="form-control">
-                                </div>
-                            </div>
+                        <div><p> <?php echo $error ?></p></div>
+                        <form action="?register=1" method="POST" class="needs-validation" novalidate="" autocomplete="off">
 
                             <div class="mb-3">
                                 <div class="input-group input-group-outline my-3">
@@ -59,7 +76,12 @@ registerUser();
                                     <input name="register-name"type="text" class="form-control">
                                 </div>
                             </div>
-
+                            <div class="mb-3">
+                                <div class="input-group input-group-outline my-3">
+                                    <label class="form-label">Email</label>
+                                    <input name="register-email" type="email" class="form-control">
+                                </div>
+                            </div>
                             <div class="mb-3">
                                 <div class="input-group input-group-outline my-3">
                                     <label class="form-label">Passwort</label>
@@ -72,7 +94,7 @@ registerUser();
                             </p>
 
                             <div class="align-items-center d-flex">
-                                <button onclick="<?php registerUser(); ?>" type="submit" class="btn btn-primary ms-auto">
+                                <button type="submit" class="btn btn-primary ms-auto">
                                     Register
                                 </button>
                             </div>

@@ -1,4 +1,10 @@
 <?php
+session_start();
+// If the user is not logged in redirect to the login page...
+if (isset($_SESSION['loggedin'])) {
+    header('Location: index.php');
+    exit;
+}
 // Change this to your connection info.
 if (!empty($_POST['submit'])) {
     $secret = "6Lex_J8gAAAAAFFBk6g9MlktRmNSQvOU3D90f5-7";
@@ -56,7 +62,6 @@ if (!empty($_POST['submit'])) {
                     $id->bind_param("s", $_POST["username"]);
                     $id->execute();
                     echo 'Du hast dich erfolgreich registriert';
-                    session_start();
                     session_regenerate_id();
                     $_SESSION['loggedin'] = TRUE;
                     $_SESSION['name'] = $_POST['username'];
