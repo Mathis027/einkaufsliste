@@ -1,5 +1,3 @@
-<?php
-require "assets/includes/css.php"; ?>
 <script>
     $(window).on('load', function () {
         $(".o-page-loader").hide();

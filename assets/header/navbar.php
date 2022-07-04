@@ -1,3 +1,8 @@
+
+
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a href="../../index.php" class="navbar-brand">Einkaufsliste</a>
@@ -9,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <a href="/list/mylists.php" class="nav-item nav-link">Meine Listen</a>
-                <a href="#" class="nav-item nav-link">Mein Profil</a>
+                <a href="../../profile.php" class="nav-item nav-link">Mein Profil</a>
                 <a href="#" class="nav-item nav-link">Meine Mitglieder</a>
             </div>
             <div class="navbar-nav ms-auto">
@@ -17,7 +22,7 @@
                     <button class="btn bg-gradient-primary mb-0" onclick="window.location.href='login.php'">Login</button>
                 <?php } ?>
                 <?php if(isset($_SESSION["id"])){ ?>
-                    <button class="btn bg-gradient-primary mb-0" onclick="window.location.href='logout.php'">Logout</button>
+                    <button class="btn bg-gradient-primary mb-0" onclick="window.location.href='../../logout.php'">Logout</button>
                 <?php } ?>
 
 

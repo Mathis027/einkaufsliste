@@ -1,7 +1,6 @@
 <?php
-require "assets/header/loader.php";
-require_once "assets/includes/list.php";
 require "assets/includes/css.php";
+require_once "assets/includes/list.php";
 session_start();
 
 if(!isset($_SESSION["id"])) {
@@ -13,10 +12,13 @@ if(!isset($_SESSION["id"])) {
 ?>
 
 <html lang="en">
+<head>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Einkaufsliste by MATX</title>
+</head>
+
 
 <body>
     <!-- NAVBAR-->
