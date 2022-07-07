@@ -6,7 +6,7 @@ if(!isset($_SESSION["id"])) {
 require "assets/header/navbar.php";
 require "assets/includes/css.php";
 include "assets/includes/connect.php";
-
+$user = getUserData($_SESSION["id"]);
 ?>
 <!doctype html>
 <html lang="en">
@@ -22,4 +22,29 @@ include "assets/includes/connect.php";
         <div class="col-12 text-center">
             <br>
             <h1>Meine Profil</h1>
+        </div>
+        <div class="card shadow-lg">
+            <div class="card-body p-5">
+                <form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+                    <div class="mb-3">
+                        <div class="input-group input-group-static mb-4">
+                            <label>Name</label>
+                            <input value="<?php echo $user["name"]; ?>" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="input-group input-group-static my-3">
+                            <label>Email</label>
+                            <input name="email" value="<?php echo $user["email"] ?>" type="email" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <button type="submit" class="btn btn-primary ms-auto">
+                            Bestätigen
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
