@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-require "assets/header/loader.php";
 require "assets/header/navbar.php";
 require "assets/includes/css.php";
 require "assets/includes/connect.php";

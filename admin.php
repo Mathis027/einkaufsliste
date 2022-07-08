@@ -8,14 +8,14 @@ if(!isset($_SESSION["id"])) {
     header("Location: ../index.php");
 }
 $user = getUserData($_SESSION["id"]);
-/*
+
 echo $user["is_admin"];
 if($user["is_admin"] !== 1){
     header("Location: index.php");
 }else {
     echo "Willkommen Admin " . $user["name"];
 }
-*/
+
 ?>
     <!doctype html>
     <html lang="en">

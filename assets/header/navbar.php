@@ -15,7 +15,7 @@
                 <a href="../../profile.php" class="nav-item nav-link">Mein Profil</a>
                 <a href="../../mitglieder.php" class="nav-item nav-link">Meine Mitglieder</a>
                 <a href="../../admin.php" id="admin_navbar_button" class="nav-item nav-link">Admin</a>
-            </div>
+            </div>‚
             <div class="navbar-nav ms-auto">
                 <?php if(!isset($_SESSION["id"])){ ?>
                     <button class="btn bg-gradient-primary mb-0" onclick="window.location.href='login.php'">Login</button>
