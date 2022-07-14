@@ -34,26 +34,46 @@ if($user["is_admin"] !== 1){
     </div>
     <div class="card shadow-lg">
     <div class="card-body p-5">
-        <form method="POST" class="needs-validation" novalidate="" autocomplete="off">
-            <div class="mb-3">
-                <div class="input-group input-group-static mb-4">
-                    <label>Name</label>
-                    <input value="<?php echo $user["name"]; ?>" type="text" class="form-control">
-                </div>
-            </div>
+        <?php
+        $allusers = getAllUsers();
+        foreach ($allusers AS $users): ?>
+        <div class="card">
+            <div class="table-responsive">
+                <table class="table align-items-center ">
+                    <thead>
+                    <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Mail</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Admin?</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Reset Password</th>
+                        <th class="text-secondary opacity-7"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                                <div class="table-item-name">
+                                    <h6 class="mb-0 text-xs"><?php echo $users["name"]?></h6>
+                                </div>
+                        </td>
+                        <td>
+                            <div class="table-item-name">
+                                <h6 class="mb-0 text-xs"><?php echo $users["name"]?></h6>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="table-item-name">
+                                <h6 class="mb-0 text-xs"><?php echo $users["name"]?></h6>
+                            </div>
+                        </td>
+                        <td class="align-middle text-center">
+                            <button class="btn btn-primary btn-sm">Reset</button>
+                        </td>
+                        <td class="align-middle">
+                            <button class="btn btn-primary btn-sm">Edit</button>
 
-            <div class="mb-3">
-                <div class="input-group input-group-static my-3">
-                    <label>Email</label>
-                    <input name="email" value="<?php echo $user["email"] ?>" type="email" class="form-control">
-                </div>
-            </div>
-
-            <div class="d-flex align-items-center">
-                <button type="submit" class="btn btn-primary ms-auto">
-                    Bestätigen
-                </button>
-            </div>
-        </form>
+                        </td>
+                    </tr>
     </div>
     </div>
+    <?php endforeach; ?>

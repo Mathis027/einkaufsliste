@@ -29,6 +29,11 @@ function getUserData($id){
     ]);
     return $user->fetch();
 }
+function getAllUsers(){
+    $getUserData = geteinkaufUsersDB();
+    $users = $getUserData->query("SELECT * FROM users");
+    return $users;
+}
     # Liste leeren
 function createNewList($table_name){
     $id = strval($_SESSION["id"]);
@@ -42,5 +47,27 @@ function createNewList($table_name){
      Name VARCHAR( 100 ) NOT NULL, 
      Anzahl VARCHAR( 150 ) NOT NULL)";
     $getListDatabase->exec($sql);
+
+}
+function refreshUserData($email ,$name, $password) {
+    $id = $_SESSION["id"];
+    $refresh = geteinkaufUsersDB();
+    if(empty($password)) {
+        $send = $refresh->prepare("UPDATE `users` SET `name`= :name,`email`= :email  WHERE id = :id");
+        $send->execute([
+            "email" => $email,
+            "name" => $name,
+            "id" => $id,
+        ]);
+    } else {
+        $newpassword = password_hash($password, PASSWORD_DEFAULT);
+        $send = $refresh->prepare("UPDATE `users` SET `name`= :name,`email`= :email,`password`= :password   WHERE id = :id");
+        $send->execute([
+            "email" => $email,
+            "name" => $name,
+            "id" => $id,
+            "password" => $newpassword,
+        ]);
+    }
 
 }
