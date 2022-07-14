@@ -13,5 +13,6 @@ if(isset($_GET["send-reset-token"])) {
     ]);
     $link = "https://kraekel.com/reset-password?token=$newpasswordToken";
     $msg = "Bitte klicke auf diesen Link um dein Passwort zurückzusetzen $link";
-    mail($email, "Password Reset", $msg);
+    mail($email, "Password Reset", $msg,null,
+        '-web@kraekel.com');
 }
