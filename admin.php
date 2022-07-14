@@ -10,10 +10,10 @@ if(!isset($_SESSION["id"])) {
 $user = getUserData($_SESSION["id"]);
 
 echo $user["is_admin"];
-if($user["is_admin"] !== 1){
-    header("Location: index.php");
-}else {
+if($user["is_admin"] == 1){
     echo "Willkommen Admin " . $user["name"];
+}else {
+    header("Location: index.php");
 }
 
 ?>
@@ -32,23 +32,22 @@ if($user["is_admin"] !== 1){
         <br>
         <h1>Admin Bereich</h1>
     </div>
-    <div class="card shadow-lg">
-    <div class="card-body p-5">
+
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Name</th>
+                    <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Mail</th>
+                    <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Admin?</th>
+                    <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Reset Password</th>
+                    <th class="text-secondary opacity-7"></th>
+                </tr>
+                </thead>
         <?php
         $allusers = getAllUsers();
         foreach ($allusers AS $users): ?>
-        <div class="card">
-            <div class="table-responsive">
-                <table class="table align-items-center ">
-                    <thead>
-                    <tr>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Mail</th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Admin?</th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Reset Password</th>
-                        <th class="text-secondary opacity-7"></th>
-                    </tr>
-                    </thead>
                     <tbody>
                     <tr>
                         <td>
@@ -58,22 +57,21 @@ if($user["is_admin"] !== 1){
                         </td>
                         <td>
                             <div class="table-item-name">
-                                <h6 class="mb-0 text-xs"><?php echo $users["name"]?></h6>
+                                <h6 class="mb-0 text-xs"><?php echo $users["email"]?></h6>
                             </div>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <div class="table-item-name">
-                                <h6 class="mb-0 text-xs"><?php echo $users["name"]?></h6>
+                                <h6 class="mb-0 text-xs"><?php echo $users["is_admin"]?></h6>
                             </div>
                         </td>
                         <td class="align-middle text-center">
-                            <button class="btn btn-primary btn-sm">Reset</button>
+                            <button onclick="window.location.href='/assets/functionsPHP/sendPasswordReset.php?send-reset-token=1'" class="btn btn-primary btn-sm">Reset</button>
                         </td>
                         <td class="align-middle">
                             <button class="btn btn-primary btn-sm">Edit</button>
 
                         </td>
                     </tr>
-    </div>
     </div>
     <?php endforeach; ?>
