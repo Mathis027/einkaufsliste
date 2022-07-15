@@ -66,7 +66,10 @@ if($user["is_admin"] == 1){
                             </div>
                         </td>
                         <td class="align-middle text-center">
-                            <button onclick="window.location.href='/assets/functionsPHP/sendPasswordReset.php?send-reset-token=1'" class="btn btn-primary btn-sm">Reset</button>
+                            <form action="assets/functionsPHP/sendPasswordReset.php" method="post">
+                                <input  hidden name="reset-email" value="<?php echo $users['email']; ?>">
+                                <button type="submit" class="btn btn-primary btn-sm">Reset</button>
+                            </form>
                         </td>
                         <td class="align-middle">
                             <button class="btn btn-primary btn-sm">Edit</button>
