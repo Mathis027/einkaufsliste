@@ -6023,7 +6023,10 @@ fieldset:disabled .btn {
   border: 0 solid transparent;
   border-radius: 0.375rem;
 }
-
+alert-right-top {
+  top: 10%;
+  right: 10%;
+}
 .alert-heading {
   color: inherit;
 }
