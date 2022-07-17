@@ -37,6 +37,14 @@ function getUserData($id){
     ]);
     return $user->fetch();
 }
+function getUserDataByEmail($email){
+    $getUserData = geteinkaufUsersDB();
+    $user = $getUserData->prepare("SELECT * FROM users WHERE email = :email");
+    $user->execute([
+        "email" => $email
+    ]);
+    return $user->fetch();
+}
 function getAllUsers(){
     $getUserData = geteinkaufUsersDB();
     $users = $getUserData->query("SELECT * FROM users");
