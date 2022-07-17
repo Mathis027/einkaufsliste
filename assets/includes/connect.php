@@ -65,8 +65,7 @@ function createNewList($table_name){
     $getListDatabase->exec($sql);
 
 }
-function refreshUserData($email ,$name, $password) {
-    $id = $_SESSION["id"];
+function refreshUserData($id, $email ,$name, $password) {
     $refresh = geteinkaufUsersDB();
     if(empty($password)) {
         $send = $refresh->prepare("UPDATE `users` SET `name`= :name,`email`= :email  WHERE id = :id");
@@ -83,6 +82,31 @@ function refreshUserData($email ,$name, $password) {
             "name" => $name,
             "id" => $id,
             "password" => $newpassword,
+        ]);
+    }
+
+}
+
+function refreshAdminUserData($id, $email ,$name, $is_admin, $password) {
+    $refresh = geteinkaufUsersDB();
+    if(empty($password)) {
+        $send = $refresh->prepare("UPDATE `users` SET `name`= :name,`email`= :email, is_admin = :is_admin  WHERE id = :id");
+        $send->execute([
+            "email" => $email,
+            "name" => $name,
+            "id" => $id,
+            "is_admin" => $is_admin,
+        ]);
+    } else {
+        $newpassword = password_hash($password, PASSWORD_DEFAULT);
+        $send = $refresh->prepare("UPDATE `users` SET `name`= :name,`email`= :email, is_admin = :is_admin, `password`= :password   WHERE id = :id");
+        $send->execute([
+            "email" => $email,
+            "name" => $name,
+            "id" => $id,
+            "password" => $newpassword,
+            "is_admin" => $is_admin,
+
         ]);
     }
 

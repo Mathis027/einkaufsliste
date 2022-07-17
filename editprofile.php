@@ -1,18 +1,25 @@
 <?php
+
 session_start();
-if(!isset($_SESSION["id"])) {
-    header("Location: ../index.php");
-}
 require "assets/header/navbar.php";
 require "assets/includes/css.php";
 include "assets/includes/connect.php";
-$user = getUserData($_SESSION["id"]);
+$myuser = getUserData($_SESSION["id"]);
+if($myuser["is_admin"] == 1){
+    echo "Willkommen Admin " . $myuser["name"];
+}else {
+    header("Location: index.php");
+}
+$id = $_GET["id"];
+$user = getUserData($id);
 if(isset($_POST["submit-new-data"])) {
     $name =$_POST["name"];
     $email =$_POST["email"];
     $password =$_POST["password"];
-    $id = $_SESSION["id"];
-    refreshUserData($id, $email, $name, $password);
+    $is_admin =$_POST["isAdmin"];
+
+    refreshAdminUserData($id, $email, $name, $is_admin, $password);
+    header("Location: editprofile.php?id=$id");
 
 }
 ?>
@@ -51,6 +58,12 @@ if(isset($_POST["submit-new-data"])) {
                         <div class="input-group input-group-static my-3">
                             <label>Neues Passwort</label>
                             <input name="password"  type="password" class="form-control"  autocomplete="on">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group input-group-static my-3">
+                            <label>Admin?</label>
+                            <input name="isAdmin" value="<?php echo $user["is_admin"] ?>" type="number" class="form-control">
                         </div>
                     </div>
 

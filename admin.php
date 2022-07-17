@@ -33,7 +33,6 @@ if($user["is_admin"] == 1){
         <h1>Admin Bereich</h1>
     </div>
 
-
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
@@ -71,9 +70,11 @@ if($user["is_admin"] == 1){
                                 <button type="submit" class="btn btn-primary btn-sm">Reset</button>
                             </form>
                         </td>
-                        <td class="align-middle">
-                            <button class="btn btn-primary btn-sm">Edit</button>
-
+                        <td class="align-middle text-center">
+                            <form action="editprofile.php" method="get">
+                                <input  hidden name="id" value="<?php echo $users['id']; ?>">
+                                <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+                            </form>
                         </td>
                     </tr>
     </div>
