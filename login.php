@@ -66,6 +66,9 @@ loginUser();
                     </div>
                     <div class="card-footer py-3 border-0">
                         <div class="text-center">
+                            <a href="reset-your-password.php" class="text-dark">Passwort vergessen</a>
+                        </div>
+                        <div class="text-center">
                             Don't have an account? <a href="register.php" class="text-dark">Create One</a>
                         </div>
                     </div>
