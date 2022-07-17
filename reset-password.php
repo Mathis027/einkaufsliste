@@ -20,7 +20,6 @@ require "assets/header/navbar.php";?>
         </div>
         <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
             <div class="card shadow-lg">
-                <p>Deine Email: <?php echo $_GET["email"]?></p>
                 <div class="card-body p-5">
                     <form method="POST" class="needs-validation" novalidate="" autocomplete="on">
                         <div class="mb-3">
