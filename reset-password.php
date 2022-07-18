@@ -69,6 +69,8 @@ if(isset($_GET["token"])){
                     echo "<script>startAlert('Passwörter stimmen nicht überein', 'alert-danger', 'alert-success')</script>";
                 }
             } else {
+                echo "<script>startAlert('Tragen sie bitte identische Passwörter  ein!', 'alert-danger', 'alert-success')</script>";
+
             }
 
         } else {
