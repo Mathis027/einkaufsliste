@@ -27,6 +27,23 @@ $('#newArtikelForm').on('submit', function(event){
                 console.log("Error");
             })
 })
+$("#newListForm").on("submit", function(event) {
+    event.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: '../assets/functionsPHP/newList.php',
+        data: $(this).serialize(),
+        })
+        .done(function (data){
+            startAlert("Neue Liste wurde erstellt" , "alert-success", "alert-danger");
+            window.location.reload();
+
+        })
+        .fail(function () {
+            startAlert("Liste bereits vorhanen!" , "alert-danger", "alert-success");
+        })
+
+});
 $(".checkedSent").change(function(event){
     event.preventDefault();
     console.log("Feldname: " + $(this.name).val());

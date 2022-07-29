@@ -1,23 +1,19 @@
 <?php
 require_once "connect.php";
-function liste(){
-
-
+function liste($markedList){
+    $list = $markedList;
     $einkaufdb = geteinkaufDB();
-
-
     # Abfrage der Daten
-    function abfrage(){
+    function abfrage($list){
         global $einkaufdb;
-        $abfrage = $einkaufdb->query("SELECT * FROM einkauf WHERE checked = '' ORDER BY ListeID DESC ");
+        $abfrage = $einkaufdb->query("SELECT * FROM $list WHERE checked = '' ORDER BY ListeID DESC ");
         return $abfrage;
     }
-    function abfrageChecked(){
+    function abfrageChecked($list){
         global $einkaufdb;
-        $abfrage = $einkaufdb->query("SELECT * FROM einkauf WHERE checked = 'checked' ORDER BY ListeID DESC ");
+        $abfrage = $einkaufdb->query("SELECT * FROM $list WHERE checked = 'checked' ORDER BY ListeID DESC ");
         return $abfrage;
     }
-
 
     ob_start(); ?>
 <br>
@@ -27,6 +23,7 @@ function liste(){
                 <div class="col-6 col-input">
                     <div class="input-group input-group-dynamic mb-4 col-4">
                         <input id="artikel" autocomplete="off" class="form-control" name="artikel" placeholder="Artikel">
+                        <input hidden id="list" name="list" value="<?php echo $list; ?>">
                     </div>
                 </div>
                 <div class="col-1">
@@ -58,7 +55,7 @@ function liste(){
     <!-- Listen Start HTML -->
 
     <?php
-    $abfrage = abfrage();
+    $abfrage = abfrage($list);
     foreach ($abfrage AS $item ) :?>
         <tr>
             <td class="table-item-name">
@@ -70,6 +67,8 @@ function liste(){
                 </form>
             </td>
             <td><form method="post" action="../../index.php" >
+                    <input hidden id="list" name="list" value="<?php echo $markedList; ?>">
+
                     <input name="id" type="hidden" id="id" value="<?php echo $item["ListeID"] ?>">
                     <div class="form-check">
                         <input value="<?php echo $item["ListeID"] ?>" name="checked" class="form-check-input checkedSent" <?php echo $item["checked"] ?>    type="checkbox">
@@ -93,7 +92,7 @@ function liste(){
 
     <!-- Checked Liste PHP -->
     <?php
-    $abfrage = abfrageChecked();
+    $abfrage = abfrageChecked($markedList);
     foreach ($abfrage AS $item ) :?>
         <tr class="table-grey">
             <td class="table-item-name"><?php echo $item["Name"] ?></td>
@@ -107,7 +106,6 @@ function liste(){
                     <input name="id" type="hidden" id="id" value=" <?php echo $item["ListeID"] ?>">
                     <div class="form-check">
                         <input class="form-check-input uncheckedSent" value="<?php echo $item["ListeID"] ?>" name="notchecked" <?php echo $item["checked"] ?> type="checkbox">
-                        <p style="position: absolute"><?php echo $item["time"] ?></p>
 
                     </div>
                 </form></td>
@@ -116,11 +114,9 @@ function liste(){
     <?php endforeach;?>
     </tbody>
 </table>
-    <?php $time = $item["time"];
 
-    ?>
-<script src="assets/js/artikel.js"></script>
+<script src="../../assets/js/scripts.js"></script>
 
-  <?php return ob_get_clean();
-    }
-    ?>
+  <?php return ob_get_clean();}
+
+?>

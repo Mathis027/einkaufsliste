@@ -12,6 +12,7 @@ if(isset($_POST["newlistname"])) {
     $table_name = $_POST["newlistname"];
     createNewList($table_name);
 }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,38 +24,20 @@ if(isset($_POST["newlistname"])) {
 </head>
 <body>
 <div class="container">
-    <div class="row">
-        <div class="col-12 text-center">
-            <br>
-            <h1>Meine Listen</h1>
-        </div>
-
-        <?php
-        $user = getUserData($_SESSION["id"]);
-
-        if ($user["id"] !== 0){?>
-            <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <form method="post">
-                    <div class="mb-3">
-                        <div class="card-title input-group input-group-outline my-3">
-                            <label class="form-label">Listen Name</label>
-                            <input name="newlistname" type="text" class="form-control">
-                        </div>
-                    </div>
-                    <p class="card-text">Hier kannst du später deine Sachen einstellen.</p>
-                    <button type="submit" class="btn btn-primary">Neue Liste</button>
-
-                </form>
+            <div class="col-12 text-center">
+                <br>
+                <h1>Meine Listen</h1>
             </div>
-        </div>
-        <?php }; ?>
-        <div id="relList">
-            <?php
-            echo listAllLists();
-            ;?>
-        </div>
-    </div>
 
-    </body>
-</html>
+            <?php
+            $user = getUserData($_SESSION["id"]);
+
+            if ($user["id"] !== 0){?>
+            <?php }; ?>
+            <div id="relAllLists">
+                <?php
+                echo listAllLists();
+                ?>
+            </div>
+<script src="../assets/js/scripts.js">
+</script>

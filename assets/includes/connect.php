@@ -50,21 +50,15 @@ function getAllUsers(){
     $users = $getUserData->query("SELECT * FROM users");
     return $users;
 }
-    # Liste leeren
-function createNewList($table_name){
-    $id = strval($_SESSION["id"]);
-    $table = $table_name . "I" . "$id";
-    $getListDatabase = geteinkaufDB();
-    $getListDatabase->setAttribute (PDO :: ATTR_ERRMODE, PDO :: ERRMODE_EXCEPTION);
-    $sql = "CREATE table $table(
-        ListeID INT( 11 ) AUTO_INCREMENT PRIMARY KEY,
-     userid INT( 11 ) NOT NULL, 
-     checked VARCHAR( 250 ) NOT NULL,
-     Name VARCHAR( 100 ) NOT NULL, 
-     Anzahl VARCHAR( 150 ) NOT NULL)";
-    $getListDatabase->exec($sql);
-
+function showTables(){
+    $getListTables = geteinkaufDB();
+    $lists = $getListTables->prepare("show tables FROM einkauf LIKE :id");
+    $lists->execute([
+        "id" => "%" . $_SESSION["id"] . "%",
+    ]);
+    return $lists->fetchAll();
 }
+    # Liste leeren
 function refreshUserData($id, $email ,$name, $password) {
     $refresh = geteinkaufUsersDB();
     if(empty($password)) {

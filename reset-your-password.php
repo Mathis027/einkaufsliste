@@ -3,7 +3,7 @@ session_start();
 require "assets/includes/connect.php";
 require "assets/includes/css.php";
 require "assets/header/navbar.php";?>
-<script type="text/javascript" src="assets/js/artikel.js"></script>
+<script type="text/javascript" src="assets/js/scripts.js"></script>
 <div id="alert"  style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
     <span class="alert-text" id="alerttext">!</span>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">

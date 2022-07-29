@@ -34,20 +34,23 @@ if(!isset($_SESSION["id"])) {
         <div class="row">
             <div class="col-12 text-center">
                 <br>
-                <h1>Einkaufsliste</h1>
+                <h1><?php $listName = $_SESSION["listname"]; echo($listName[0]); ?></h1>
             </div>
         </div>
         <!-- Script für Alert -->
 
         <div id="relList">
             <?php
-            echo liste();
-            ;?>
+            $liste = $_SESSION["list"];
+            echo liste($liste);
+            ?>
         </div>
 
         <!-- CONTENT END -->
         <!-- JQuery -->
+
 </body>
+
 <!-- NAVBAR END-->
     <!-- CONTENT START-->
 

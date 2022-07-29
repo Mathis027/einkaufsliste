@@ -30,3 +30,10 @@
         </div>
     </div>
 </nav>
+<div id="alert"  style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <span class="alert-text" id="alerttext">Artikel hinzugefügt!</span>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+</div>
