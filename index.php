@@ -1,12 +1,14 @@
 <?php
-require "assets/includes/css.php";
-require_once "assets/includes/list.php";
 session_start();
 
 if(!isset($_SESSION["id"])) {
     header("Location: login.php");
 
-} elseif($_SESSION["listname"] == "") {
+}
+require "assets/includes/css.php";
+require_once "assets/includes/list.php";
+
+if($_SESSION["listname"] == "") {
     header("location: /list/mylists.php");
 }
 
