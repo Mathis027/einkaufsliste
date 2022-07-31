@@ -6,6 +6,8 @@ session_start();
 if(!isset($_SESSION["id"])) {
     header("Location: login.php");
 
+} elseif($_SESSION["listname"] == "") {
+    header("location: /list/mylists.php");
 }
 
 // If the user is not logged in redirect to the login page...

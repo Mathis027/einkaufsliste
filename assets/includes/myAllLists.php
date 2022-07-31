@@ -2,7 +2,7 @@
 
 if(isset($_POST["list"]))  {
     $_SESSION["list"] = $_POST["list"];
-    $_SESSION["listname"] = explode("I", $_POST["list"]);
+    $_SESSION["listname"] = explode("_", $_POST["list"]);
     header("Location: ../../index.php");
 }
 function listAllLists(){
@@ -12,6 +12,7 @@ function listAllLists(){
         <div class="col">
             <div class="card" style="width: 18rem;">
                     <div class="card-body">
+                    <h3>Neu erstellen</h3>
                         <form method="post" id="newListForm">
                             <div class="mb-3">
                                 <div class="card-title input-group input-group-outline my-3">
@@ -28,10 +29,17 @@ function listAllLists(){
     foreach($lists as $rows):
         $num = 0;
         $rowrare = $rows[$num];
-        $row = explode("I", $rows[$num])
+        $row = explode("_", $rows[$num])
         ?>
         <div class="col">
             <div class="card" style="width: 18rem;">
+                <div class="card-head btn-liste-loeschen">
+                    <form action="../../assets/functionsPHP/loschen.php" id="deleteListForm" method="post">
+                        <input hidden name="list" value="<?php echo $rowrare; ?>">
+                        <button class="btn btn-danger btn-sm" type="submit">x</button>
+
+                    </form>
+                </div>
                 <div class="card-body">
                     <form method="post">
                         <div class="mb-3">
@@ -49,3 +57,6 @@ function listAllLists(){
     $num++;
     endforeach;
 }?>
+<script>
+
+</script>

@@ -10,11 +10,6 @@ try {
 } catch(PDOException $e) {
     echo "Es ist ein Fehler bei der Datenbankverbindung aufgetreten: " . $e;
 }
-/*try {
-    $einkaufUsersPassword= new PDO('mysql:host=91.218.65.223;dbname=password_reset_temp', 'users-einkaufsliste', '0wd3@k84V');
-} catch(PDOException $e) {
-    echo "Es ist ein Fehler bei der Datenbankverbindung aufgetreten: " . $e;
-}*/
 
 # Artikel hinzufügen 
 function geteinkaufDB(){

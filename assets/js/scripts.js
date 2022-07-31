@@ -44,6 +44,23 @@ $("#newListForm").on("submit", function(event) {
         })
 
 });
+$("#deleteListForm").on("submit", function(event) {
+    event.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: '../assets/functionsPHP/loschen.php',
+        data: $(this).serialize(),
+    })
+        .done(function (data){
+            startAlert("Dises Liste wurde gelöscht" , "alert-danger", "alert-success");
+            window.location.reload();
+
+        })
+        .fail(function () {
+            startAlert("Liste konnte nicht gelöscht werden!" , "alert-warn", "alert-success");
+        })
+
+});
 $(".checkedSent").change(function(event){
     event.preventDefault();
     console.log("Feldname: " + $(this.name).val());

@@ -27483,3 +27483,21 @@ input[type=checkbox] {
 
   }
 }
+
+/* Eigenes CSS */
+.btn-liste-loeschen {
+  position: absolute;
+  margin-top: 10px;
+  width: 95%;
+}
+.btn-liste-loeschen button {
+  float: right;
+  width: auto;
+  transition: 10ms;
+  color: red;
+  background-color: transparent;
+}
+
+.btn-liste-loeschen button:hover {
+  width: auto;
+}

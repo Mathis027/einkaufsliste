@@ -1,20 +1,28 @@
 <?php
 require_once "connect.php";
 function liste($markedList){
-    $list = $markedList;
+     $list = $markedList;
     $einkaufdb = geteinkaufDB();
     # Abfrage der Daten
     function abfrage($list){
         global $einkaufdb;
-        $abfrage = $einkaufdb->query("SELECT * FROM $list WHERE checked = '' ORDER BY ListeID DESC ");
-        return $abfrage;
+        try {
+            $abfrage = $einkaufdb->query("SELECT * FROM $list WHERE checked = '' ORDER BY ListeID DESC ");
+            return $abfrage;
+
+        } catch (PDOException $e) {
+            header("Location: /list/mylists.php");
+        }
     }
     function abfrageChecked($list){
         global $einkaufdb;
-        $abfrage = $einkaufdb->query("SELECT * FROM $list WHERE checked = 'checked' ORDER BY ListeID DESC ");
-        return $abfrage;
+        try {
+            $abfrage = $einkaufdb->query("SELECT * FROM $list WHERE checked = 'checked' ORDER BY ListeID DESC ");
+            return $abfrage;
+        } catch (PDOException $e) {
+            header("Location: /list/mylists.php");
+        }
     }
-
     ob_start(); ?>
 <br>
     <div class="row">

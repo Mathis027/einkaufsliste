@@ -4,7 +4,8 @@ session_start();
 function createNewList($table_name)
 {
     $id = strval($_SESSION["id"]);
-    $table = $table_name . "I" . "$id";
+    $umwandel = str_replace('_', '', $table_name);
+    $table = $umwandel . "_" . "$id";
     $getListDatabase = geteinkaufDB();
     $getListDatabase->setAttribute(PDO :: ATTR_ERRMODE, PDO :: ERRMODE_EXCEPTION);
     $sql = "CREATE table $table(
