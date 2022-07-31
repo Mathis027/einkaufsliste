@@ -8,9 +8,6 @@ if(!isset($_SESSION["id"])) {
 require "assets/includes/css.php";
 require_once "assets/includes/list.php";
 
-if($_SESSION["listname"] == "") {
-    header("location: /list/mylists.php");
-}
 
 // If the user is not logged in redirect to the login page...
 ?>
