@@ -4,6 +4,10 @@ session_start();
 if(!isset($_SESSION["id"])) {
     header("Location: login.php");
 
+} else {
+    if($_SESSION["listname"] == "") {
+        header("location: /list/mylists.php");
+    }
 }
 require "assets/includes/css.php";
 require_once "assets/includes/list.php";
