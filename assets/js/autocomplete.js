@@ -1,7 +1,7 @@
 
     $(document).ready(function(){
     // Defining the local dataset
-    var artikel = ;
+    var artikel = "";
 
     // Constructing the suggestion engine
     var cars = new Bloodhound({

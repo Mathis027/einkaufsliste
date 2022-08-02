@@ -37,7 +37,6 @@ if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['s
         //Logge den Benutzer ein
         $_SESSION['id'] = $securitytoken_row['user_id'];
         header("Refresh:0");
-        var_dump($securitytoken);
     }
 }
 function loginUser(){

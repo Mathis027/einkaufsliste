@@ -13,8 +13,8 @@
 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 
 <!-- Core -->
-<script src="assets/cssTheme/js/core/popper.min.js"></script>
-<script src="assets/cssTheme/js/core/bootstrap.min.js"></script>
+<script src="/assets/cssTheme/js/core/popper.min.js"></script>
+<script src="/assets/cssTheme/js/core/bootstrap.min.js"></script>
 <!-- Theme JS -->
 <link href="/assets/cssTheme/css/material-kit.css" rel="stylesheet">
 <script src="/assets/cssTheme/js/material-kit.js"></script>
