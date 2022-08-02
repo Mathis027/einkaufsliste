@@ -19,8 +19,31 @@ function loginUser(){
                 $_SESSION["id"] = $user["id"];
                 $_SESSION["name"] = $user["name"];
                 $_SESSION["email"] = $user["email"];
-                header("Refresh:0");
-            } else {
+
+
+                function random_string()
+                {
+                    $bytes = random_bytes(16);
+                    $str = bin2hex($bytes);
+                    return $str;
+                }
+
+                if ($_POST["remember"] == 1) {
+                    $identifier = random_string();
+                    $securitytoken = random_string();
+
+                    $insert = geteinkaufUsersDB()->prepare("INSERT INTO securitytokens (user_id, identifier, securitytoken) VALUES (:userid, :identifier, :securitytoken)");
+                    $insert->execute([
+                        "userid" => $user["id"],
+                        "identifier" => $identifier,
+                        "securitytoken" => $securitytoken,
+                    ]);
+                    setcookie("identifier", $identifier, time() + (3600 * 24 * 365)); //1 Jahr Gültigkeit
+                    setcookie("securitytoken", $securitytoken, time() + (3600 * 24 * 365)); //1 Jahr Gültigkeit
+                    header("Refresh: 0");
+                }
+            }
+            else {
                 echo "Passwort oder Email Adresse ist falsch";
 
             }
@@ -55,7 +78,7 @@ loginUser();
 
                             <div class="d-flex align-items-center">
                                 <div class="form-check">
-                                    <input type="checkbox" name="remember" id="remember" class="form-check-input">
+                                    <input type="checkbox" name="remember" id="remember" value="1" class="form-check-input">
                                     <label for="remember" class="form-check-label">Remember Me</label>
                                 </div>
                                 <button type="submit" class="btn btn-primary ms-auto">
