@@ -16,7 +16,8 @@ if(isset($_SESSION["id"])) {
         $securitytoken_row = $statement->fetch();
 
         if($securitytoken !== $securitytoken_row['securitytoken']) {
-            die("jwef");
+            exit;
+
         } else { //Token war korrekt
             //Setze neuen Token
             function random_string()
