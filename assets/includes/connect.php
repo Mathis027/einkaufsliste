@@ -100,7 +100,6 @@ function refreshAdminUserData($id, $email ,$name, $is_admin, $password) {
     }
 
 }
-var_dump($_COOKIE["identifier"]);
 
 if(!isset($_SESSION["id"])) {
     if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
@@ -114,7 +113,11 @@ if(!isset($_SESSION["id"])) {
         );
         $securitytoken_row = $statement->fetch();
         if($securitytoken !== $securitytoken_row['securitytoken']) {
+            var_dump($_COOKIE["identifier"]);
+            echo "<br>";
             var_dump($securitytoken);
+            echo "<br>";
+
             var_dump($securitytoken_row["securitytoken"]);
         } else { //Token war korrekt
             //Setze neuen Token
