@@ -102,8 +102,7 @@ function refreshAdminUserData($id, $email ,$name, $is_admin, $password) {
 }
 var_dump($_COOKIE["identifier"]);
 echo "<br>";
-var_dump($_COOKIE["securitytoken"]);
-echo "<br>";
+
 if(!isset($_SESSION["id"])) {
     if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
         $identifier = $_COOKIE['identifier'];
@@ -116,12 +115,7 @@ if(!isset($_SESSION["id"])) {
         );
         $securitytoken_row = $statement->fetch();
         if($securitytoken !== $securitytoken_row['securitytoken']) {
-            var_dump($_COOKIE["identifier"]);
-            echo "<br>";
-            var_dump($securitytoken);
-            echo "<br>";
-
-            var_dump($securitytoken_row["securitytoken"]);
+            header("Location: ../login.php");
         } else { //Token war korrekt
             //Setze neuen Token
             function random_string()
@@ -138,10 +132,8 @@ if(!isset($_SESSION["id"])) {
             setcookie("securitytoken",$neuer_securitytoken,time()+(3600*24*365)); //1 Jahr Gültigkeit
 
             //Logge den Benutzer ein
-            var_dump("neuer <br>" . $neuer_securitytoken);
-
-            //$_SESSION['id'] = $securitytoken_row['user_id'];
-            //header("Refresh:0");
+            $_SESSION['id'] = $securitytoken_row['user_id'];
+            header("Refresh:0");
         }
     }
 }
