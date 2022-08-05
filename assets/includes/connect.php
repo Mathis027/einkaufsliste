@@ -100,37 +100,38 @@ function refreshAdminUserData($id, $email ,$name, $is_admin, $password) {
     }
 
 }
+if(!isset($_SESSION["id"])) {
+    if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
+        $identifier = $_COOKIE['identifier'];
+        $securitytoken = $_COOKIE['securitytoken'];
 
-if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
-    $identifier = $_COOKIE['identifier'];
-    $securitytoken = $_COOKIE['securitytoken'];
+        $statement = geteinkaufUsersDB()->prepare("SELECT * FROM securitytokens WHERE identifier = :identifier");
+        $result = $statement->execute([
+                "identifier" => $identifier,
+            ]
+        );
+        $securitytoken_row = $statement->fetch();
 
-    $statement = geteinkaufUsersDB()->prepare("SELECT * FROM securitytokens WHERE identifier = :identifier");
-    $result = $statement->execute([
-            "identifier" => $identifier,
-        ]
-    );
-    $securitytoken_row = $statement->fetch();
+        if($securitytoken !== $securitytoken_row['securitytoken']) {
+            header("Location: ../index.php");
 
-    if($securitytoken !== $securitytoken_row['securitytoken']) {
-        header("Location: ../index.php");
+        } else { //Token war korrekt
+            //Setze neuen Token
+            function random_string()
+            {
+                $bytes = random_bytes(16);
+                $str = bin2hex($bytes);
+                return $str;
+            }
+            $neuer_securitytoken = random_string();
+            $insert = geteinkaufUsersDB()->prepare("UPDATE securitytokens SET securitytoken = :securitytoken WHERE identifier = :identifier");
+            $insert->execute(array('securitytoken' => sha1($neuer_securitytoken), 'identifier' => $identifier));
+            setcookie("identifier",$identifier,time()+(3600*24*365)); //1 Jahr Gültigkeit
+            setcookie("securitytoken",$neuer_securitytoken,time()+(3600*24*365)); //1 Jahr Gültigkeit
 
-    } else { //Token war korrekt
-        //Setze neuen Token
-        function random_string()
-        {
-            $bytes = random_bytes(16);
-            $str = bin2hex($bytes);
-            return $str;
+            //Logge den Benutzer ein
+            $_SESSION['id'] = $securitytoken_row['user_id'];
+            header("Refresh:0");
         }
-        $neuer_securitytoken = random_string();
-        $insert = geteinkaufUsersDB()->prepare("UPDATE securitytokens SET securitytoken = :securitytoken WHERE identifier = :identifier");
-        $insert->execute(array('securitytoken' => sha1($neuer_securitytoken), 'identifier' => $identifier));
-        setcookie("identifier",$identifier,time()+(3600*24*365)); //1 Jahr Gültigkeit
-        setcookie("securitytoken",$neuer_securitytoken,time()+(3600*24*365)); //1 Jahr Gültigkeit
-
-        //Logge den Benutzer ein
-        $_SESSION['id'] = $securitytoken_row['user_id'];
-        header("Refresh:0");
     }
 }
