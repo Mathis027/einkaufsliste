@@ -39,7 +39,6 @@ function loginUser(){
                     ]);
                     setcookie("identifier", $identifier, time() + (3600 * 24 * 365)); //1 Jahr Gültigkeit
                     setcookie("securitytoken", $securitytoken, time() + (3600 * 24 * 365)); //1 Jahr Gültigkeit
-                    header("Refresh: 0");
                 }
             }
             else {
