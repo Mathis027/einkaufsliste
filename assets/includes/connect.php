@@ -113,7 +113,7 @@ if(!isset($_SESSION["id"])) {
         $securitytoken_row = $statement->fetch();
 
         if($securitytoken !== $securitytoken_row['securitytoken']) {
-            header("Location: ../index.php");
+            echo "dein sec token ist komisch";
 
         } else { //Token war korrekt
             //Setze neuen Token
