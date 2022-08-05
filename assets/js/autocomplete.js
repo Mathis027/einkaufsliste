@@ -1,23 +1,13 @@
 
-    $(document).ready(function(){
-    // Defining the local dataset
-    var artikel = "";
 
-    // Constructing the suggestion engine
-    var cars = new Bloodhound({
-    datumTokenizer: Bloodhound.tokenizers.whitespace,
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    local: cars
-});
+const search = document.getElementById("artikel");
+const matchList = document.getElementById("match-list");
+// Search artikel.json and filter ist
+const searchArtikel =  async searchText => {
+    const res = await fetch("assets/js/artikel.json");
+    const artikel = await res.json();
+    console.log(search.value);
 
-    // Initializing the typeahead
-    $('.typeahead').typeahead({
-    hint: true,
-    highlight: true, /* Enable substring highlighting */
-    minLength: 1 /* Specify minimum characters required for showing result */
-},
-{
-    name: 'artikel',
-    source: cars
-});
-});
+
+}
+search.addEventListener("input", () => searchArtikel(search.value));

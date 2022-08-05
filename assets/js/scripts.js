@@ -3,7 +3,6 @@ $('#newArtikelForm').on('submit', function(event){
     event.preventDefault();
     let add = document.getElementById("add");
     let artikeltext = document.getElementById("artikel").value;
-    console.log(artikeltext);
     add.disabled = true;
         $.ajax({
             type: 'POST',
@@ -11,7 +10,6 @@ $('#newArtikelForm').on('submit', function(event){
             data: $(this).serialize(),
         })
             .done(function (data){
-                console.log(data)
                 $('#relList').html(data)
                 add.disabled = false
                 const artikel = document.getElementById("artikel").value="";
@@ -63,14 +61,12 @@ $("#deleteListForm").on("submit", function(event) {
 });
 $(".checkedSent").change(function(event){
     event.preventDefault();
-    console.log("Feldname: " + $(this.name).val());
     $.ajax({
         type: 'POST',
         url: 'assets/functionsPHP/ChangeChecked.php',
         data: { checked: $(this).val() },
     })
         .done(function (data){
-            console.log(data)
             $('#relList').html(data)
         })
         .fail(function (){
@@ -80,14 +76,12 @@ $(".checkedSent").change(function(event){
 
 $(".uncheckedSent").change(function(event){
     event.preventDefault();
-    console.log("Hallo" + $( this ).val())
     $.ajax({
         type: 'POST',
         url: 'assets/functionsPHP/ChangeChecked.php',
         data: { notchecked: $(this).val() },
     })
         .done(function (data){
-            console.log(data)
             $('#relList').html(data)
         })
         .fail(function (){
@@ -108,7 +102,6 @@ function changeAnzahl(anzahl, id) {
             },
         })
             .done(function (data){
-                console.log(data)
                 $('#relList').html(data)
                 startAlert("Anzahl geändert", "alert-success", "alert-danger")
             })

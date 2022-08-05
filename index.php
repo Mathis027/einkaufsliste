@@ -46,7 +46,6 @@ require_once "assets/includes/list.php";
 
         <!-- CONTENT END -->
         <!-- JQuery -->
-        <script src="assets/js/autocomplete.js">
 </body>
 
 <!-- NAVBAR END-->

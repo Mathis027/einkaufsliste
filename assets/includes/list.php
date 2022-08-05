@@ -30,7 +30,7 @@ function liste($markedList){
             <div class="row">
                 <div class="col-6 col-input">
                     <div class="input-group input-group-dynamic mb-4 col-4">
-                        <input id="artikel" autocomplete="off" class="form-control typeahead tt-query" name="artikel" placeholder="Artikel">
+                        <input id="artikel" autocomplete="off" class="form-control" name="artikel" placeholder="Artikel">
                         <input hidden id="list" name="list" value="<?php echo $list; ?>">
                     </div>
                 </div>
@@ -124,9 +124,7 @@ function liste($markedList){
 </table>
 
 <script src="../../assets/js/scripts.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="../../assets/js/autocomplete.js"></script>
-    <script src="../../assets/js/typeaheadbundle.js"></script>
+<script src="../../assets/js/autocomplete.js"></script>
 
 
     <?php return ob_get_clean();}
