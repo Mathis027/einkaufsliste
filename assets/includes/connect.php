@@ -101,7 +101,7 @@ function refreshAdminUserData($id, $email ,$name, $is_admin, $password) {
 
 }
 
-    if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
+if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
         $identifier = $_COOKIE['identifier'];
         $securitytoken = $_COOKIE['securitytoken'];
 
