@@ -43,7 +43,7 @@ function registerUser() {
                         $_SESSION["id"] = $user["id"];
                         $_SESSION["name"] = $user["name"];
                         $_SESSION["email"] = $user["email"];
-
+                        header("Refresh: 2");
                     } else {
                         echo "<div class='error'>Email exisitiert bereits</div>";
 

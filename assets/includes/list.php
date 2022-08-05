@@ -124,7 +124,6 @@ function liste($markedList){
 </table>
 
 <script src="../../assets/js/scripts.js"></script>
-<script src="../../assets/js/autocomplete.js"></script>
 
 
     <?php return ob_get_clean();}
