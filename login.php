@@ -1,9 +1,9 @@
 <?php
 session_start();
+require "assets/includes/connect.php";
 if(isset($_SESSION["id"])) {
     header("Location: /list/mylists.php");
 }
-require "assets/includes/connect.php";
 if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
     $identifier = $_COOKIE['identifier'];
     $securitytoken = $_COOKIE['securitytoken'];
@@ -15,7 +15,7 @@ if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['s
     );
     $securitytoken_row = $statement->fetch();
     if($securitytoken !== $securitytoken_row['securitytoken']) {
-        header("Location: ../login.php");
+        echo "Autologin Fehlgeschlagen";
     } else { //Token war korrekt
         //Setze neuen Token
         function random_string()
