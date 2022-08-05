@@ -33,7 +33,6 @@ if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['s
 
         //Logge den Benutzer ein
         $_SESSION['id'] = $securitytoken_row['user_id'];
-        $user = getUserData($_SESSION["id"]);
         header("Refresh: 0");
     }
 }
@@ -54,6 +53,7 @@ function loginUser(){
                 $_SESSION["id"] = $user["id"];
                 $_SESSION["name"] = $user["name"];
                 $_SESSION["email"] = $user["email"];
+                header("Refresh: 0");
 
 
                 function random_string()
@@ -75,6 +75,7 @@ function loginUser(){
                     ]);
                     setcookie("identifier", $identifier, time() + (3600 * 24 * 365)); //1 Jahr Gültigkeit
                     setcookie("securitytoken", $securitytoken, time() + (3600 * 24 * 365)); //1 Jahr Gültigkeit
+                    header("Refresh: 0");
                 }
             }
             else {
