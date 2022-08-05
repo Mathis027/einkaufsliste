@@ -113,7 +113,7 @@ if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['s
     $securitytoken_row = $statement->fetch();
 
     if($securitytoken !== $securitytoken_row['securitytoken']) {
-        header("Location: index.php");
+        header("Location: ../index.php");
 
     } else { //Token war korrekt
         //Setze neuen Token
