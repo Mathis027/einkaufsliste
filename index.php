@@ -1,7 +1,9 @@
 <?php
 session_start();
 require "assets/includes/connect.php";
-
+if(!isset($_SESSION["id"])) {
+    header("Location: login.php");
+}
 //Überprüfe auf den 'Angemeldet bleiben'-Cookie
 require "assets/includes/css.php";
 require_once "assets/includes/list.php";
