@@ -113,10 +113,9 @@ if(!isset($_SESSION["id"])) {
             ]
         );
         $securitytoken_row = $statement->fetch();
-        var_dump($identifier);
         if($securitytoken !== $securitytoken_row['securitytoken']) {
             var_dump($securitytoken);
-            var_dump($securitytoken_row);
+            var_dump($securitytoken_row["securitytoken"]);
         } else { //Token war korrekt
             //Setze neuen Token
             function random_string()
