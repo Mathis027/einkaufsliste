@@ -1,6 +1,8 @@
 <?php
 session_start();
-
+if(isset($_SESSION["id"])) {
+    header("Location: /list/mylists.php");
+}
 require "assets/includes/connect.php";
 if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
     $identifier = $_COOKIE['identifier'];
@@ -31,7 +33,8 @@ if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['s
 
         //Logge den Benutzer ein
         $_SESSION['id'] = $securitytoken_row['user_id'];
-        header("Location: index.php");
+        $user = getUserData($_SESSION["id"]);
+        header("Refresh: 0");
     }
 }
 
