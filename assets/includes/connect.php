@@ -100,8 +100,6 @@ function refreshAdminUserData($id, $email ,$name, $is_admin, $password) {
     }
 
 }
-var_dump($_COOKIE["identifier"]);
-echo "<br>";
 
 if(!isset($_SESSION["id"])) {
     if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
@@ -136,4 +134,6 @@ if(!isset($_SESSION["id"])) {
             header("Refresh:0");
         }
     }
+} else {
+    header("../index.php");
 }
