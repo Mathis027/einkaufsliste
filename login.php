@@ -15,7 +15,7 @@ if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['s
     );
     $securitytoken_row = $statement->fetch();
     if($securitytoken !== $securitytoken_row['securitytoken']) {
-        echo "Autologin Fehlgeschlagen";
+        echo "";
     } else { //Token war korrekt
         //Setze neuen Token
         function random_string()
@@ -25,7 +25,6 @@ if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['s
             return $str;
         }
         $neuer_securitytoken = random_string();
-        var_dump($neuer_securitytoken);
         $insert = geteinkaufUsersDB()->prepare("UPDATE securitytokens SET securitytoken = :securitytoken WHERE identifier = :identifier");
         $insert->execute(array('securitytoken' => sha1($neuer_securitytoken), 'identifier' => $identifier));
         setcookie("identifier",$identifier,time()+(3600*24*365)); //1 Jahr Gültigkeit
@@ -42,11 +41,11 @@ require "assets/header/navbar.php";
 
 
 function loginUser(){
-    $email = $_POST["email"];
-    $password = $_POST["password"];
 
-    if(!empty($email) && !empty(($password))) {
-            $statement = geteinkaufUsersDB()->prepare("SELECT * FROM users WHERE email = :email");
+    if(!empty($_POST["email"]) && !empty($_POST["password"])) {
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $statement = geteinkaufUsersDB()->prepare("SELECT * FROM users WHERE email = :email");
             $result = $statement->execute(array('email' => $email));
             $user = $statement->fetch();
             if(password_verify($password, $user["password"])) {
