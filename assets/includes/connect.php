@@ -138,7 +138,7 @@ if(!isset($_SESSION["id"])) {
             setcookie("securitytoken",$neuer_securitytoken,time()+(3600*24*365)); //1 Jahr Gültigkeit
 
             //Logge den Benutzer ein
-            var_dump($neuer_securitytoken);
+            var_dump("neuer <br>" . $neuer_securitytoken);
 
             //$_SESSION['id'] = $securitytoken_row['user_id'];
             //header("Refresh:0");
