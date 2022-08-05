@@ -131,14 +131,17 @@ if(!isset($_SESSION["id"])) {
                 return $str;
             }
             $neuer_securitytoken = random_string();
+            var_dump($neuer_securitytoken);
             $insert = geteinkaufUsersDB()->prepare("UPDATE securitytokens SET securitytoken = :securitytoken WHERE identifier = :identifier");
             $insert->execute(array('securitytoken' => sha1($neuer_securitytoken), 'identifier' => $identifier));
             setcookie("identifier",$identifier,time()+(3600*24*365)); //1 Jahr Gültigkeit
             setcookie("securitytoken",$neuer_securitytoken,time()+(3600*24*365)); //1 Jahr Gültigkeit
 
             //Logge den Benutzer ein
-            $_SESSION['id'] = $securitytoken_row['user_id'];
-            header("Refresh:0");
+            var_dump($neuer_securitytoken);
+
+            //$_SESSION['id'] = $securitytoken_row['user_id'];
+            //header("Refresh:0");
         }
     }
 }
