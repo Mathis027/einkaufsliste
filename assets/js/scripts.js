@@ -89,7 +89,17 @@ $(".uncheckedSent").change(function(event){
         })
 })
 function changeAnzahl(anzahl, id) {
-    if (anzahl.search(/^[a-zA-Z0-9]+$/) == -1) {
+    if (anzahl == "") {
+        $.ajax({
+            type: 'POST',
+            url: 'assets/functionsPHP/ChangeAnzahl.php',
+            data: {
+                id : id,
+                anzahl : "",
+            },
+        })
+    }else if
+     (anzahl.search(/^[a-zA-Z0-9\/ -]+/) == -1) {
         startAlert("Anzahl enthält falsche Zeichen", "alert-danger", "alert-success")
 
     } else {

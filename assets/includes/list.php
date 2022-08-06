@@ -66,7 +66,7 @@ function liste($markedList){
     $abfrage = abfrage($list);
     foreach ($abfrage AS $item ) :?>
         <tr>
-            <td class="table-item-name">
+            <td class="table-item-name" style="overflow: scroll; max-width: 80px">
                 <?php echo $item["Name"] ?></td>
             <td>
                 <form name="anzahlInputForm" class="anzahlInputForm" method="post" action="">
