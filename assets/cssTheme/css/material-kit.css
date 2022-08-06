@@ -27501,5 +27501,7 @@ input[type=checkbox] {
 .btn-liste-loeschen button:hover {
   width: auto;
 }
-
+.table-item-name {
+  resize: none;
+}
 /* Autocomplete */
