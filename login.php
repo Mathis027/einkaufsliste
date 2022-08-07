@@ -30,7 +30,7 @@ if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['s
         $insert = geteinkaufUsersDB()->prepare("UPDATE securitytokens SET securitytoken = :securitytoken WHERE identifier = :identifier");
         $insert->execute(array('securitytoken' => sha1($neuer_securitytoken), 'identifier' => $identifier));
         setcookie("identifier",$identifier,time()+(3600*24*365)); //1 Jahr Gültigkeit
-        setcookie("securitytoken",$neuer_securitytoken,time()+(3600*24*365)); //1 Jahr Gültigkeit
+        setcookie("securitytoken",sha1($neuer_securitytoken),time()+(3600*24*365)); //1 Jahr Gültigkeit
 
         //Logge den Benutzer ein
         $_SESSION['id'] = $securitytoken_row['user_id'];

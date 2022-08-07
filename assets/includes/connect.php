@@ -100,3 +100,5 @@ function refreshAdminUserData($id, $email ,$name, $is_admin, $password) {
     }
 
 }
+var_dump($_COOKIE["identifier"]);
+var_dump($_COOKIE["securitytoken"]);
