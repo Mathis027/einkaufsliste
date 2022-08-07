@@ -4,6 +4,8 @@ require "assets/includes/connect.php";
 if(isset($_SESSION["id"])) {
     header("Location: /list/mylists.php");
 }
+var_dump($_COOKIE["identifier"]);
+var_dump($_COOKIE["securitytoken"]);
 if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
     $identifier = $_COOKIE['identifier'];
     $securitytoken = $_COOKIE['securitytoken'];

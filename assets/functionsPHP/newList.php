@@ -4,8 +4,9 @@ session_start();
 function createNewList($table_name)
 {
     $id = strval($_SESSION["id"]);
-    $umwandel = str_replace('_', '', $table_name);
-    $table = $umwandel . "_" . "$id";
+    $umwandel1 = preg_replace('/\s+/', '_', $table_name);
+    $umwandel = str_replace('_ID', '', $umwandel1);
+    $table = $umwandel . "_ID" . "$id";
     $getListDatabase = geteinkaufDB();
     $getListDatabase->setAttribute(PDO :: ATTR_ERRMODE, PDO :: ERRMODE_EXCEPTION);
     $sql = "CREATE table $table(

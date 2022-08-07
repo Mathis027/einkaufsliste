@@ -2,7 +2,7 @@
 
 if(isset($_POST["list"]))  {
     $_SESSION["list"] = $_POST["list"];
-    $_SESSION["listname"] = explode("_", $_POST["list"]);
+    $_SESSION["listname"] = explode("_ID", $_POST["list"]);
     header("Location: ../../index.php");
 }
 function listAllLists(){
@@ -29,7 +29,9 @@ function listAllLists(){
     foreach($lists as $rows):
         $num = 0;
         $rowrare = $rows[$num];
-        $row = explode("_", $rows[$num])
+        $row1 = explode("_ID", $rows[$num]);
+        $row = preg_replace("_", " " , $row1)
+
         ?>
         <div class="col">
             <div class="card" style="width: 18rem;">
