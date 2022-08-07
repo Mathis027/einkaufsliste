@@ -29,8 +29,7 @@ function listAllLists(){
     foreach($lists as $rows):
         $num = 0;
         $rowrare = $rows[$num];
-        $row1 = explode("_ID", $rows[$num]);
-        $row = preg_replace("_", " " , $row1)
+        $row = explode("_ID", $rows[$num]);
 
         ?>
         <div class="col">
