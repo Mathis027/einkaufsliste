@@ -27503,5 +27503,20 @@ input[type=checkbox] {
 }
 .table-item-name {
   resize: none;
+  min-width: 100px;
+}
+
+.anzahlInput {
+  resize: none;
+  width: 100px;
+}
+@media only screen and (min-width: 800px)  {
+  .table-item-name {
+    width: 500px;
+  }
+}@media only screen and (min-width: 952px)  {
+  .table-item-name {
+    width: 700px;
+  }
 }
 /* Autocomplete */

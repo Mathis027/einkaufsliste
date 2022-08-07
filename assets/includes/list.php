@@ -68,7 +68,7 @@ function liste($markedList){
         <tr>
             <td class="table-item-name" style="overflow: scroll; max-width: 80px">
                 <?php echo $item["Name"] ?></td>
-            <td>
+                <td class="table-item-anzahl">
                 <form name="anzahlInputForm" class="anzahlInputForm" method="post" action="">
                     <input type="hidden" name="id" value="<?php echo $item["ListeID"] ?>">
                     <input  type="text" autocomplete="off" class="anzahlInput" name="anzahl-<?php echo $item["ListeID"]; ?>" value="<?php echo $item["Anzahl"] ?>">
