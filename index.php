@@ -6,7 +6,7 @@ if(!isset($_SESSION["id"])) {
 }
 //Überprüfe auf den 'Angemeldet bleiben'-Cookie
 require "assets/includes/css.php";
-require "assets/header/navbar.php"
+require "assets/header/navbar.php";
 
 require_once "assets/includes/list.php";
 
