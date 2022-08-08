@@ -6,6 +6,8 @@ if(!isset($_SESSION["id"])) {
 }
 //Überprüfe auf den 'Angemeldet bleiben'-Cookie
 require "assets/includes/css.php";
+require "assets/header/navbar.php"
+
 require_once "assets/includes/list.php";
 
 
@@ -23,7 +25,6 @@ require_once "assets/includes/list.php";
 
 <body>
     <!-- NAVBAR-->
-    <?php require "assets/header/navbar.php" ?>
     <div id="alert"  style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
         <span class="alert-text" id="alerttext">Artikel hinzugefügt!</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
