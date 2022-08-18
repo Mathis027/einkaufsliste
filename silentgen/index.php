@@ -1,4 +1,6 @@
 <?php
+require "assets/required/navbar.php";
+
 $generatorname = "Minecraft";
 $currentaccounts = 12;
 if(isset($_GET["type"])) {
@@ -27,77 +29,27 @@ if(isset($_GET["type"])) {
     <link id="pagestyle" href="assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
 
-<body style="background: linear-gradient(to bottom, #1e5799 0%,#97b9d5 100%);">
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
-                <div class="container-fluid">
-                    <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="../pages/dashboard.html">
-                        Silent-GEN
-                    </a>
-                    <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon mt-2">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navigation">
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="?type=Minecraft">
-                                    <img src="assets/img/minecraft.png" class="me-1" alt="">
-                                    Minecraft
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link me-2" href="?type=Disney%2B">
-                                    <i class="fa fa-user opacity-6 text-dark me-1"></i>
-                                    Disney
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link me-2" href="?type=Netflix">
-                                    <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
-                                    Netflix
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link me-2" href="?type=Crunchyroll">
-                                    <i class="fas fa-key opacity-6 text-dark me-1"></i>
-                                    Crunchyroll
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav d-lg-block d-none">
-                            <li class="nav-item">
-                                <a href="https://discord.com" target="_blank" class="btn btn-sm mb-0 me-1 btn-primary"><i class="fa-brands fa-discord me-1"></i> Discord</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- End Navbar -->
 
 
 <main class="main-content ">
-    <div class="page-header align-items-start mt-5 pt-5 pb-11 m-3" >
-       <div class="container-fluid">
+    <div class="page-header align-items-start mt-5 pt-5 m-3 text-center" >
+       <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="card mb-4">
-                            <div class="card-header pb-0 text-center">
+                        <div class="card mb-4" >
+                            <div class="card-header pb-0" >
                                 <h3><?php echo $generatorname;?></h3>
                                 <br>
-
+                            </div>
                                 <div class="card-body px-0 pt-0 pb-2">
                                     <p>Click to generate a new account</p>
 
                                     <button onclick="window.location.href='generated.php?'" class="btn btn-generate btn-success btn-md"><i class="fa-solid fa-sync fa-spin"></i>
                                         Generate Account</button>
                                 </div>
-                                <div class="card-footer mb-2 ">
+                                <div class="card-footer ">
 
-                                    <div class="d-flex align-items-center justify-content-end ">
+                                    <div class="d-flex align-items-center justify-content-end " >
                                         <div class="col-12 col-lg-4 col-md-6">
                                             <div  class="d-flex align-items-center justify-content-center justify-content-md-start justify-content-lg-start">
                                                 <span class="me-2 text-md font-weight-bold">Available chance</span>
@@ -116,10 +68,11 @@ if(isset($_GET["type"])) {
 
                                 </div>
                         </div>
-
+                    </div>
                     </div>
                 </div>
                 </div>
+    <div class="container">
            <div class="row">
                <div class="col-12">
                    <div class="card mb-4">
