@@ -50,19 +50,19 @@ $generatorname = $_GET["genname"];
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link me-2" href="generate?type=disney">
+                                <a class="nav-link me-2" href="index.php?type=disney">
                                     <i class="fa fa-user opacity-6 text-dark me-1"></i>
                                     Disney
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link me-2" href="generate.php?type=disney">
+                                <a class="nav-link me-2" href="index.php?type=disney">
                                     <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
                                     Netflix
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link me-2" href="/">
+                                <a class="nav-link me-2" href="index.php?type=Crunchyroll">
                                     <i class="fas fa-key opacity-6 text-dark me-1"></i>
                                     Crunchyroll
                                 </a>
