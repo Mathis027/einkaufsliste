@@ -66,9 +66,9 @@ if(isset($_GET["genname"])) {
                             <div class="card-header pb-0">
                                 <h4>Feedback</h4>
                                 <h6>What do you think of our service?</h6>
-                                <button class="btn btn-success btn-md p-5"><i class="fa-regular fa-face-smile fa-xl"></i></button>
-                                <button style="background: #ffae00" class="btn btn-warning btn-md p-5"><i class="fa-regular fa-face-meh fa-xl"></i></button>
-                                <button class="btn btn-danger btn-md p-5"><i class="fa-regular fa-face-frown fa-xl"></i></button>
+                                <button class="btn btn-success btn-md p-4"><i class="fa-regular fa-face-smile fa-xl"></i></button>
+                                <button style="background: #ffae00" class="btn btn-warning btn-md p-4"><i class="fa-regular fa-face-meh fa-xl"></i></button>
+                                <button class="btn btn-danger btn-md p-4"><i class="fa-regular fa-face-frown fa-xl"></i></button><br>
                                 <label for="text">WHat can we do better?</label>
                                 <textarea name="text" class="form-control mb-2" placeholder="Make a good design a$$"></textarea>
                                 <button type="submit" class="btn btn-success" value="absenden">Send</button>
