@@ -98,14 +98,14 @@ if(isset($_GET["type"])) {
                                 <div class="card-footer mb-2 ">
 
                                     <div class="d-flex align-items-center justify-content-end ">
-                                        <div class="col-6">
-                                            <div class="d-flex align-items-center justify-content-end">
+                                        <div class="col-12 col-lg-4 col-md-6">
+                                            <div  class="d-flex align-items-center justify-content-center justify-content-md-start justify-content-lg-start">
                                                 <span class="me-2 text-md font-weight-bold">Available chance</span>
 
                                             </div>
-                                            <div class="d-flex align-items-center justify-content-end">
+                                            <div class="d-flex align-items-center justify-content-start">
                                                 <span class="me-2 text-md font-weight-bold">60%</span>
-                                                <div class="col-lg-6 col-md-10 col-10">
+                                                <div class="col-lg-10 col-md-10 col-10">
                                                     <div class="progress">
                                                         <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
                                                     </div>
