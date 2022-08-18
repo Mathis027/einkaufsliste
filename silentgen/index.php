@@ -32,11 +32,11 @@ if(isset($_GET["type"])) {
 
 
 <main class="main-content ">
-    <div class="page-header align-items-start mt-5 pt-5 m-3 text-center" >
-       <div class="container">
-                <div class="row">
+    <div class="container">
+    <div class="page-header align-items-center justify-content-center mt-5 pt-5 col-12 text-center" >
+                <div class="row col-12">
                     <div class="col-12">
-                        <div class="card mb-4" >
+                        <div class="card mb-4" style="min-width: 100%;" >
                             <div class="card-header pb-0" >
                                 <h3><?php echo $generatorname;?></h3>
                                 <br>
@@ -65,12 +65,10 @@ if(isset($_GET["type"])) {
                                             </div>
                                         </div>
                                     </div>
-
+                                    </div>
+                        </div>
                                 </div>
                         </div>
-                    </div>
-                    </div>
-                </div>
                 </div>
     <div class="container">
            <div class="row">

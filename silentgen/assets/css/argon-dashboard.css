@@ -26942,3 +26942,6 @@ padding-left: 20px;
 .currentaccs {
   position: absolute;}
 /*# sourceMappingURL=dashboard-free.css.map */
+.no-radius {
+  border-radius: 0;
+}

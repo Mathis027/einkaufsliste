@@ -16,25 +16,25 @@
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="?type=Minecraft">
+                    <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="index.php?type=Minecraft">
                         <img src="assets/img/minecraft.png" class="me-1" alt="">
                         Minecraft
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-2" href="?type=Disney%2B">
+                    <a class="nav-link me-2" href="index.php?type=Disney%2B">
                         <i class="fa fa-user opacity-6 text-dark me-1"></i>
                         Disney
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-2" href="?type=Netflix">
+                    <a class="nav-link me-2" href="index.php?type=Netflix">
                         <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
                         Netflix
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-2" href="?type=Crunchyroll">
+                    <a class="nav-link me-2" href="index.php?type=Crunchyroll">
                         <i class="fas fa-key opacity-6 text-dark me-1"></i>
                         Crunchyroll
                     </a>

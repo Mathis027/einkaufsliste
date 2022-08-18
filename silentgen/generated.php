@@ -1,10 +1,15 @@
 <?php
 require "assets/required/navbar.php";
-
 $generatorname = "Default";
-$gen_pass = $_GET["genpass"];
-$gen_mail = $_GET["genmail"];
-$generatorname = $_GET["genname"];
+$gen_pass = "";
+$gen_mail = "";
+if(isset($_GET["genname"])) {
+    $generatorname = $_GET["genname"];
+}if(isset($_GET["genpass"])) {
+    $gen_pass = $_GET["genpass"];
+}if(isset($_GET["genmail"])) {
+    $gen_mail = $_GET["genmail"];
+}
 
 ?>
 <!DOCTYPE html>
