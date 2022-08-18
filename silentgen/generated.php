@@ -37,10 +37,10 @@ if(isset($_GET["genname"])) {
 
 
 <main class="main-content  mt-5">
-    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" >
+    <div class="align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" >
        <div class="container">
                 <div class="row">
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-6">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                         <div class="card mb-4">
                             <div class="card-header pb-0 ">
                                 <h3 class="text-center "><?php echo $generatorname;?></h3>
@@ -61,14 +61,17 @@ if(isset($_GET["genname"])) {
                                 </div>
                         </div>
                     </div>
-                </div>
-           <div class="row">
-               <div class="col-12">
+               <div class="col-12 col-md-6 col-lg-6">
                    <div class="card mb-4">
                             <div class="card-header pb-0">
-                                <h6>Feedback</h6>
-
-                                
+                                <h4>Feedback</h4>
+                                <h6>What do you think of our service?</h6>
+                                <button class="btn btn-success btn-md p-5"><i class="fa-regular fa-face-smile fa-xl"></i></button>
+                                <button style="background: #ffae00" class="btn btn-warning btn-md p-5"><i class="fa-regular fa-face-meh fa-xl"></i></button>
+                                <button class="btn btn-danger btn-md p-5"><i class="fa-regular fa-face-frown fa-xl"></i></button>
+                                <label for="text">WHat can we do better?</label>
+                                <textarea name="text" class="form-control mb-2" placeholder="Make a good design a$$"></textarea>
+                                <button type="submit" class="btn btn-success" value="absenden">Send</button>
                             </div>
                             <div class="card-body px-0 pt-0 pb-2">
                             </div>
