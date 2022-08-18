@@ -49,7 +49,7 @@ function showTables(){
     $getListTables = geteinkaufDB();
     $lists = $getListTables->prepare("show tables FROM einkauf LIKE :id");
     $lists->execute([
-        "id" => "%" . $_SESSION["id"] . "%",
+        "id" => "%" . "_ID" . $_SESSION["id"] ."%",
     ]);
     return $lists->fetchAll();
 }

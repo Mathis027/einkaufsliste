@@ -37,7 +37,7 @@ function liste($markedList){
                 <div class="col-1">
                     <label></label>
                     <br>
-                    <input id="add" type="submit" value="+" name="add" class="btn btn-plus btn-primary btn-md">
+                    <button id="add" type="submit" name="add" class="btn btn-plus btn-md btn-primary"><i class="fa-solid fa-plus"></i></button>
 
                 </div>
             </div>
@@ -67,6 +67,8 @@ function liste($markedList){
     foreach ($abfrage AS $item ) :?>
         <tr>
             <td class="table-item-name" style="overflow: scroll; max-width: 80px">
+                <img src="https://www.axelspringer.com/data/uploads/2019/09/1920-1.jpg" class="avatar avatar-sm me-3" alt="user1">
+
                 <?php echo $item["Name"] ?></td>
                 <td class="table-item-anzahl">
                 <form name="anzahlInputForm" class="anzahlInputForm" method="post" action="">

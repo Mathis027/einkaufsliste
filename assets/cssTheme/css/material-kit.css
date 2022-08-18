@@ -27444,6 +27444,9 @@ input[type=checkbox] {
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
 }
+.btn-plus {
+  padding: 10px 11px;
+}
 @media (max-width: 576px) {
   .alert {
     font-size: 15px;
@@ -27451,7 +27454,6 @@ input[type=checkbox] {
   }
   .btn-plus {
     font-size: 22px;
-    padding: 0px 15px;
 
   }
   .col-input {
@@ -27464,7 +27466,6 @@ input[type=checkbox] {
 @media (min-width: 576px) {
   .btn-plus {
     font-size: 22px ;
-    padding: 0px 15px;
 
   }
   .col-input {
@@ -27475,7 +27476,6 @@ input[type=checkbox] {
 @media (min-width:700px) {
   .btn-plus {
     font-size: 22px ;
-    padding: 0px 15px;
   }
   .alert {
     width: 25%;
@@ -27519,4 +27519,6 @@ input[type=checkbox] {
     width: 700px;
   }
 }
-/* Autocomplete */
+.fa-solid {
+  color: white;
+}
