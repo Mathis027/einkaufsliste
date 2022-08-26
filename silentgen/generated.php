@@ -64,14 +64,18 @@ if(isset($_GET["genname"])) {
                <div class="col-12 col-md-6 col-lg-6">
                    <div class="card mb-4">
                             <div class="card-header pb-0">
-                                <h4>Feedback</h4>
+                                <h4 class="text-center">Feedback</h4>
                                 <h6>What do you think of our service?</h6>
-                                <button class="btn btn-success btn-md p-4"><i class="fa-regular fa-face-smile fa-xl"></i></button>
-                                <button style="background: #ffae00" class="btn btn-warning btn-md p-4"><i class="fa-regular fa-face-meh fa-xl"></i></button>
-                                <button class="btn btn-danger btn-md p-4"><i class="fa-regular fa-face-frown fa-xl"></i></button><br>
-                                <label for="text">WHat can we do better?</label>
-                                <textarea name="text" class="form-control mb-2" placeholder="Make a good design a$$"></textarea>
-                                <button type="submit" class="btn btn-success" value="absenden">Send</button>
+                                <form action="" METHOD="get">
+                                    <form id="btnform">
+                                        <button class="btn btnform btn-success btn-md p-4" type="submit" value="good"><i class="fa-regular fa-face-smile fa-xl"></i></button>
+                                        <button style="background: #ffae00" type="submit" class="btn btnform btn-warning btn-md p-4"><i class="fa-regular fa-face-meh fa-xl"></i></button>
+                                        <button type="submit" class="btn btn-danger btnform btn-md p-4"><i class="fa-regular fa-face-frown fa-xl"></i></button><br>
+                                    </form>
+                                    <label for="text">WHat can we do better?</label>
+                                    <textarea name="text" class="form-control mb-2" placeholder="Make a good design a$$"></textarea>
+                                    <button type="submit" class="btn btn-success" value="absenden">Send</button>
+                                </form>
                             </div>
                             <div class="card-body px-0 pt-0 pb-2">
                             </div>
@@ -95,9 +99,19 @@ if(isset($_GET["genname"])) {
         }
         Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+
+
+    $("#btnform").on("submit", function(event) {
+        event.preventDefault();
+        document.getElementById("btnform").style.visibility = "none";
+    }
 </script>
 <!-- Github buttons -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+<script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
 <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
 </body>

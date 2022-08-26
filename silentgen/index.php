@@ -6,6 +6,7 @@ $currentaccounts = 12;
 if(isset($_GET["type"])) {
     $generatorname = $_GET["type"];
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,16 +36,16 @@ if(isset($_GET["type"])) {
     <div class="container">
     <div class="align-items-center justify-content-center mt-5 pt-5 text-center" >
                 <div class="row">
-                    <div class="col-12">
-                        <div class="card mb-4" >
-                            <div class="card-header pb-0" >
+                    <div class="col-12" >
+                        <div class="card mb-4">
+                            <div class="card-header pb-0">
                                 <h3><?php echo $generatorname;?></h3>
                                 <br>
                             </div>
                                 <div class="card-body px-0 pt-0 pb-2">
                                     <p>Click to generate a new account</p>
 
-                                    <button onclick="window.location.href='generated.php?'" class="btn btn-generate btn-success btn-md"><i class="fa-solid fa-sync fa-spin"></i>
+                                    <button onclick="window.location.href='generated.php?'" class="btn btn-generate btn-primary btn-md"><i class="fa-solid fa-sync fa-spin"></i>
                                         Generate Account</button>
                                 </div>
                                 <div class="card-footer ">
