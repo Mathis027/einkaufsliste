@@ -10,7 +10,7 @@ require "assets/header/navbar.php";
 
 require_once "assets/includes/list.php";
 
-
+echo "rtestM";
 // If the user is not logged in redirect to the login page...
 ?>
 
