@@ -11,7 +11,8 @@ function liste($markedList){
             return $abfrage;
 
         } catch (PDOException $e) {
-            header("Location: /list/mylists.php");
+            echo $e;
+            // header("Location: /list/mylists.php");
         }
     }
     function abfrageChecked($list){
@@ -20,7 +21,8 @@ function liste($markedList){
             $abfrage = $einkaufdb->query("SELECT * FROM $list WHERE checked = 'checked' ORDER BY ListeID DESC ");
             return $abfrage;
         } catch (PDOException $e) {
-            header("Location: /list/mylists.php");
+            echo $e;
+            // header("Location: /list/mylists.php");
         }
     }
     ob_start(); ?>

@@ -46,12 +46,12 @@ function getAllUsers(){
     return $users;
 }
 function showTables(){
-    $getListTables = geteinkaufDB();
-    $lists = $getListTables->prepare("show tables FROM einkauf LIKE :id");
-    $lists->execute([
-        "id" => "%" . "_ID" . $_SESSION["id"] ."%",
+    $getliststring = geteinkaufUsersDB();
+    $strings = $getliststring->prepare("SELECT * FROM listdata WHERE userid = :userid");
+    $strings->execute([
+        "userid" => $_SESSION["id"],
     ]);
-    return $lists->fetchAll();
+    return $strings;
 }
     # Liste leeren
 function refreshUserData($id, $email ,$name, $password) {

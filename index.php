@@ -10,7 +10,6 @@ require "assets/header/navbar.php";
 
 require_once "assets/includes/list.php";
 
-echo "rtestM";
 // If the user is not logged in redirect to the login page...
 ?>
 
@@ -36,7 +35,7 @@ echo "rtestM";
         <div class="row">
             <div class="col-12 text-center">
                 <br>
-                <h1><?php $listName = $_SESSION["listname"]; echo($listName[0]); ?></h1>
+                <h1><?php $listName = $_SESSION["listname"]; echo($listName); ?></h1>
             </div>
         </div>
         <!-- Script für Alert -->
