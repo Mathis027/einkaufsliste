@@ -45,7 +45,7 @@ if(isset($_GET["type"])) {
                                 <div class="card-body px-0 pt-0 pb-2">
                                     <p>Click to generate a new account</p>
 
-                                    <button onclick="window.location.href='generated.php?'" class="btn btn-generate btn-primary btn-md"><i class="fa-solid fa-sync fa-spin"></i>
+                                    <button onclick="window.location.href='generate.php?gen=1'" class="btn btn-generate btn-primary btn-md"><i class="fa-solid fa-sync fa-spin"></i>
                                         Generate Account</button>
                                 </div>
                                 <div class="card-footer ">
