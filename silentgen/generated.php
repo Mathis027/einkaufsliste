@@ -1,16 +1,16 @@
 <?php
 require "assets/required/navbar.php";
+
+$str = $_GET["accounts"];
+$str1 = explode(":",  $str);
+$other = explode("|", $str1[1] , 2);
+
 $generatorname = "Default";
 $gen_pass = "";
-$gen_mail = "";
-if(isset($_GET["genname"])) {
-    $generatorname = $_GET["genname"];
-}if(isset($_GET["genpass"])) {
-    $gen_pass = $_GET["genpass"];
-}if(isset($_GET["genmail"])) {
-    $gen_mail = $_GET["genmail"];
-}
-
+$gen_mail = $str1[0];
+$gen_pass = $other[0];
+$gen_other = $other[1];
+echo "test";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,6 +54,10 @@ if(isset($_GET["genname"])) {
                                     <div class="mb-3">
                                         <label for="password">Password</label>
                                         <input type="text" value="<?php echo $gen_pass ?>" readonly class="form-control" placeholder="Password" aria-label="Password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="other">Other Informations</label>
+                                        <input type="text"  name="other" value="<?php echo $gen_other ?>" readonly class="form-control" placeholder="Other informations" aria-label="Other Informations">
                                     </div>
                                     <div class="mb-2 align-items-end">
                                         <button class="btn btn-sm mb-0 me-1 btn-primary">Refresh Account Data</button>

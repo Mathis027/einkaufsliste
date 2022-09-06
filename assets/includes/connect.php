@@ -47,7 +47,7 @@ function getAllUsers(){
 }
 function showTables(){
     $getliststring = geteinkaufUsersDB();
-    $strings = $getliststring->prepare("SELECT * FROM listdata WHERE userid = :userid");
+    $strings = $getliststring->prepare("SELECT * FROM listdata WHERE userid LIKE :userid");
     $strings->execute([
         "userid" => $_SESSION["id"],
     ]);
