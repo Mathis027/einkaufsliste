@@ -1,7 +1,8 @@
 <?php
 require "assets/required/navbar.php";
 
-$generatorname = "Minecraft";
+$generatorname = $_GET["type"];
+$filename = strtolower($generatorname) . ".txt";
 $currentaccounts = 12;
 if(isset($_GET["type"])) {
     $generatorname = $_GET["type"];
@@ -44,9 +45,20 @@ if(isset($_GET["type"])) {
                             </div>
                                 <div class="card-body px-0 pt-0 pb-2">
                                     <p>Click to generate a new account</p>
+                                    <form method="post">
+                                        <input hidden type="text" name="generate" value="generate-new">
+                                        <button onclick="" type="submit" class="btn btn-generate btn-primary btn-md"><i class="fa-solid fa-sync fa-spin"></i>
+                                            Generate Account</button>
+                                    </form>
+                                    <?php
+                                    if(isset($_POST["generate"])) {
+                                        $text = file_get_contents( "$filename");
+                                        $array = explode("\n",  $text);
+                                        $link =  $array[array_rand($array)];
+                                        echo '<a class="generate-link" target="_blank" href="https:/kraekel.com/silentgen/generated.php?accounts=', urlencode($link), '">click here</a>';
+                                    }
 
-                                    <button onclick="window.location.href='generate.php?gen=1'" class="btn btn-generate btn-primary btn-md"><i class="fa-solid fa-sync fa-spin"></i>
-                                        Generate Account</button>
+                                    ?>
                                 </div>
                                 <div class="card-footer ">
 

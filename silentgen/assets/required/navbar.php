@@ -1,4 +1,8 @@
 <!-- Navbar -->
+<?php require "assets/includes/connect.php" ;
+$lists = showlists();
+?>
+
 <body style="background: linear-gradient(to bottom, #1e5799 0%,#97b9d5 100%);">
 
 <nav class="navbar navbar-expand-lg blur top-0 z-index-3 shadow position-absolute py-2 start-0 end-0 ">
@@ -15,30 +19,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav mx-auto">
+                <?php foreach($lists as $type1):
+                    $type = ucfirst($type1);?>
+
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="index.php?type=Minecraft">
-                        <img src="assets/img/minecraft.png" class="me-1" alt="">
-                        Minecraft
+                    <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="index.php?type=<?php echo $type1; ?>">
+                        <img src="assets/img/<?php echo $type; ?>.png" class="me-1" alt="">
+                        <?php echo $type; ?>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link me-2" href="index.php?type=Disney%2B">
-                        <i class="fa fa-user opacity-6 text-dark me-1"></i>
-                        Disney
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link me-2" href="index.php?type=Netflix">
-                        <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
-                        Netflix
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link me-2" href="index.php?type=Crunchyroll">
-                        <i class="fas fa-key opacity-6 text-dark me-1"></i>
-                        Crunchyroll
-                    </a>
-                </li>
+                <?php endforeach; ?>
             </ul>
             <ul class="navbar-nav d-lg-block d-none">
                 <li class="nav-item">
