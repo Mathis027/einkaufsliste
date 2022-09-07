@@ -1,12 +1,18 @@
 <?php
 require "assets/required/navbar.php";
 
-$generatorname = $_GET["type"];
-$filename = strtolower($generatorname) . ".txt";
 $currentaccounts = 12;
+
 if(isset($_GET["type"])) {
     $generatorname = $_GET["type"];
+    $dbname = strtolower($_GET["type"]);
+    $filename = strtolower($generatorname) . ".txt";
+} else {
+    $generatorname = "Netflix";
+    $dbname = strtolower($generatorname);
+    $filename = strtolower($generatorname) . ".txt";
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -52,10 +58,13 @@ if(isset($_GET["type"])) {
                                     </form>
                                     <?php
                                     if(isset($_POST["generate"])) {
-                                        $text = file_get_contents( "$filename");
+                                        /*$text = file_get_contents( "$filename");
                                         $array = explode("\n",  $text);
-                                        $link =  $array[array_rand($array)];
-                                        echo '<a class="generate-link" target="_blank" href="https:/kraekel.com/silentgen/generated.php?accounts=', urlencode($link), '">click here</a>';
+                                        $link =  $array[array_rand($array)];*/
+                                        $db = getDB();
+                                        $stmt = $db->query("SELECT account FROM `$dbname` ORDER BY RAND() LIMIT 1");
+                                        $link = $stmt->fetch();
+                                        echo '<a class="generate-link" target="_blank" href="https:/kraekel.com/silentgen/generated.php?accounts=' . urlencode($link["account"]) . '">click here</a>';
                                     }
 
                                     ?>
