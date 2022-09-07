@@ -64,7 +64,7 @@ if(isset($_GET["type"])) {
                                         $db = getDB();
                                         $stmt = $db->query("SELECT account FROM `$dbname` ORDER BY RAND() LIMIT 1");
                                         $link = $stmt->fetch();
-                                        echo '<a class="generate-link" target="_blank" href="https:/kraekel.com/silentgen/generated.php?accounts=' . urlencode($link["account"]) . '">click here</a>';
+                                        echo '<a class="generate-link" target="_blank" href="https://kraekel.com/silentgen/generated.php?accounts=' . urlencode($link["account"]) . '">click here</a>';
                                     }
 
                                     ?>
