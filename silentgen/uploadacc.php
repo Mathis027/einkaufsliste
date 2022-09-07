@@ -5,7 +5,8 @@ $db = getDB();
 
 if (isset($_POST["leeren"]))
 {
-    $db->query("DELETE FROM accounts");
+    $table = $_POST["list"];
+    $db->query("DELETE FROM `$table`");
 }
 if(isset($_POST["newaccountdata"])) {
 
@@ -17,7 +18,10 @@ if(isset($_POST["newaccountdata"])) {
 
     foreach ($array as $account){
 
-        $db->query("INSERT INTO $table (`account`, `date`) VALUES ('$account', CURRENT_DATE )");
+        $stmt = $db->prepare("INSERT INTO `$table` (`account`, `date`) VALUES (:account, CURRENT_DATE )");
+        $stmt->execute([
+                "account" => $account,
+        ]);
 
     }
     echo "Datei hochgeladen!";

@@ -18,3 +18,15 @@ function showlists() {
     $lists = $query->fetchAll(PDO::FETCH_COLUMN);
     return $lists;
 }
+function stockAbfrage($table) {
+    global $db;
+    $query = $db->query("SELECT account FROM $table");
+    $anzahl = $query->rowCount();
+    return $anzahl;
+}
+function lastUpdated($table) {
+    global $db;
+    $query = $db->query("SELECT date FROM $table");
+    $date = $query->fetch();
+    return $date;
+}

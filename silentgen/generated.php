@@ -1,17 +1,14 @@
 <?php
 require "assets/required/navbar.php";
 
-$st = $_GET["accounts"];
-$str = $st;
+$str = $_GET["accounts"];
 $str1 = explode(":",  $str);
-$other = explode("|", $str1[1] , 2);
-
+$other = explode("|", $str1[1] , 50);
 $generatorname = "Default";
 $gen_pass = "";
 $gen_mail = $str1[0];
 $gen_pass = $other[0];
 $gen_other = $other[1];
-echo "test";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +41,7 @@ echo "test";
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                         <div class="card mb-4">
                             <div class="card-header pb-0 ">
+
                                 <h3 class="text-center "><?php echo $generatorname;?></h3>
                             </div>
                                 <div class="card-body px-4 pt-0 pb-2">
