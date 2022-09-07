@@ -2,6 +2,7 @@
 require "assets/required/navbar.php";
 
 $st = $_GET["accounts"];
+$str = $st;
 $str1 = explode(":",  $str);
 $other = explode("|", $str1[1] , 2);
 
