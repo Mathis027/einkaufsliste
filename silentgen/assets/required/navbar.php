@@ -24,7 +24,7 @@ $lists = showlists();
 
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="index.php?type=<?php echo $type; ?>">
-                        <img style="width: 30px; height: 30px" src="assets/img/<?php echo $type; ?>.png" class="me-1" alt="">
+                        <img style="width: 30px; height: 30px" src="assets/img/<?php echo $type1; ?>.png" class="me-1" alt="">
                         <?php echo $type; ?>
                     </a>
                 </li>
