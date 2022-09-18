@@ -127,7 +127,7 @@ $lastupdated = lastUpdated($dbname);
                                             <td>
                                                 <div class="d-flex px-2">
                                                     <div>
-                                                        <img src="assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
+                                                        <img src="assets/img/<?php echo $list ?>.png" class="avatar avatar-sm rounded-circle me-4" alt="spotify">
                                                     </div>
                                                     <div class="my-auto">
                                                         <h6 class="mb-0 text-sm"><?php echo $listname; ?></h6>
