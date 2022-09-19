@@ -69,7 +69,7 @@ function liste($markedList){
     foreach ($abfrage AS $item ) :?>
         <tr>
             <td class="table-item-name" style="overflow: scroll; max-width: 80px">
-                <img src="https://www.axelspringer.com/data/uploads/2019/09/1920-1.jpg" class="avatar avatar-sm me-3" alt="user1">
+
 
                 <?php echo $item["Name"] ?></td>
                 <td class="table-item-anzahl">
