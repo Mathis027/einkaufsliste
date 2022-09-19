@@ -1,0 +1,6 @@
+<Files /admin/index.php>
+  AuthName "Admin Login-Bereich"
+  AuthType Basic
+  AuthUserFile .htpasswd
+  require valid-user
+</Files>
