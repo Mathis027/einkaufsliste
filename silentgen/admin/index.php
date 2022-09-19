@@ -1,4 +1,5 @@
 <?php
+
 require "../assets/includes/connect.php";
 
 $db = getDB();
