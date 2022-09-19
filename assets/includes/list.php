@@ -1,5 +1,8 @@
 <?php
 require_once "connect.php";
+if ($markedList = "") {
+   header("Location: list/mylists.php")
+}
 function liste($markedList){
      $list = $markedList;
     $einkaufdb = geteinkaufDB();
