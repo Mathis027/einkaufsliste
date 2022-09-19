@@ -158,4 +158,5 @@
 
 </div>
 <!--Waves end-->
+    <?php require "assets/required/footer.php" ?>
 </body>
