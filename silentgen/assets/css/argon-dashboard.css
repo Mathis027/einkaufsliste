@@ -124,9 +124,11 @@ h6,
   margin-bottom: 0.5rem;
   font-weight: 400;
   line-height: 1.2;
-  color: white;
+  color: black;
 }
-
+.landing h2, .landing h3,.landing h4, .landing h5 {
+  color:white;
+}
 h1,
 .h1 {
   font-size: calc(1.425rem + 2.1vw);
@@ -1410,7 +1412,6 @@ progress {
 
   .col-md-10 {
     flex: 0 0 auto;
-    width: 83.333333%;
   }
 
   .col-md-11 {
@@ -27000,7 +27001,7 @@ body {
 }
 
 .text2 {
-  color: #a5aec0
+  color: white;
 }
 /* Waves */
 

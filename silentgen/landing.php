@@ -35,7 +35,7 @@
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50 capacity</span></span> </div>
+                    <div class="mt-3"> <span class="text2">Account Generator with working Accounts and love</span></span> </div>
                 </div>
             </div>
         </div>
@@ -56,8 +56,8 @@
         </g>
     </svg>
 </div>
-<div class="white-container pt-8 container-fluid">
-    <div class="container ">
+<div class="white-container pt-8 container-fluid landing">
+    <div class="container" style="">
         <div class="col-md-10 align-content-center ">
             <div class="row ">
                 <div class="col-xl-3 col-lg-6">
@@ -65,12 +65,12 @@
                         <div class="card-statistic-3 p-4">
                             <div class="card-icon card-icon-large"><i class="fas fa-shopping-cart"></i></div>
                             <div class="mb-4">
-                                <h5 class="card-title mb-0">New Orders</h5>
+                                <h5 class="card-title mb-0">Generated accounts</h5>
                             </div>
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        3,243
+                                        30.943
                                     </h2>
                                 </div>
                                 <div class="col-4 text-right">
@@ -78,7 +78,7 @@
                                 </div>
                             </div>
                             <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="30,4%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        15.07k
+                                        2.321
                                     </h2>
                                 </div>
                                 <div class="col-4 text-right">
@@ -101,7 +101,7 @@
                                 </div>
                             </div>
                             <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
                             </div>
                         </div>
                     </div>
@@ -110,13 +110,14 @@
                     <div class="card l-bg-green-dark">
                         <div class="card-statistic-3 p-4">
                             <div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
+                            <h5 class="card-title mb-0">Sold accounts</h5>
                             <div class="mb-4">
-                                <h5 class="card-title mb-0">Ticket Resolved</h5>
+                                <h5 class="card-title mb-0"></h5>
                             </div>
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        578
+                                        145
                                     </h2>
                                 </div>
                                 <div class="col-4 text-right">
@@ -124,7 +125,7 @@
                                 </div>
                             </div>
                             <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                <div class="progress-bar l-bg-orange" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                <div class="progress-bar l-bg-orange" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
                             </div>
                         </div>
                     </div>
@@ -134,12 +135,12 @@
                         <div class="card-statistic-3 p-4">
                             <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
                             <div class="mb-4">
-                                <h5 class="card-title mb-0">Revenue Today</h5>
+                                <h5 class="card-title mb-0">Discord Members</h5>
                             </div>
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        $11.61k
+                                        198
                                     </h2>
                                 </div>
                                 <div class="col-4 text-right">
@@ -147,7 +148,7 @@
                                 </div>
                             </div>
                             <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
                             </div>
                         </div>
                     </div>

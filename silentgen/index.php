@@ -38,6 +38,7 @@ $lastupdated = lastUpdated($dbname);
     <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+    <script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script><script>linkvertise(110463, {whitelist: ["kraekel.com/silentgen/generated.php",""], blacklist: []});</script>
 </head>
 
 
@@ -60,7 +61,7 @@ $lastupdated = lastUpdated($dbname);
                                             Generate Account</button>
                                        <br><span><?php echo $instock;?> Accounts available</span>
                                        <div class="mb-3">
-                                           <span>Last updated: <?php echo $lastupdated[0];?> </span>
+                                           <span><b>Last updated: <?php echo $lastupdated[0];?></b></span>
 
                                        </div>
                                     </form>
