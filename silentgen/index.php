@@ -38,7 +38,7 @@ $lastupdated = lastUpdated($dbname);
     <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
-    <script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script><script>linkvertise(110463, {whitelist: ["kraekel.com/silentgen/generated.php",""], blacklist: []});</script>
+    <!--<script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script><script>linkvertise(110463, {whitelist: ["accounts.silent-gen.com",""], blacklist: []});</script>-->
 </head>
 
 
@@ -71,7 +71,7 @@ $lastupdated = lastUpdated($dbname);
                                         $db = getDB();
                                         $stmt = $db->query("SELECT account FROM `$dbname` ORDER BY RAND() LIMIT 1");
                                         $link = $stmt->fetch();
-                                        echo '<a class="generate-link fs-4" target="_blank" href="generated.php?accounts=' . urlencode($link["account"]) . '">click here</a>';
+                                        echo '<a class="generate-link fs-4" target="_blank" href="https://accounts.silent-gen.com/bla/generated.php?accounts=' . urlencode($link["account"]) . '">click here</a>';
                                     }
 
                                     ?>

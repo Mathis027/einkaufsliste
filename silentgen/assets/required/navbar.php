@@ -23,7 +23,7 @@ $lists = showlists();
                     $type = ucfirst($type1);?>
 
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="index.php?type=<?php echo $type; ?>">
+                    <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="https://silent-gen.com/index.php?type=<?php echo $type; ?>">
                         <img style="width: 30px; height: 30px" src="assets/img/<?php echo $type1; ?>.png" class="me-1" alt="">
                         <?php echo $type; ?>
                     </a>
