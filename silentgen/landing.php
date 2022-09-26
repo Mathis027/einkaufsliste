@@ -58,10 +58,13 @@
 </div>
 <div class="white-container pt-8 container-fluid landing">
     <div class="container" style="">
-        <div class="col-md-10 align-content-center ">
+        <div class="about-us-title text-center">
+            <h1><b>Some stats?</b></h1>
+        </div>
+        <div class="col-md-10 align-content-center mt-7">
             <div class="row ">
-                <div class="col-xl-3 col-lg-6">
-                    <div class="card l-bg-cherry">
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="card l-bg-blue-dark">
                         <div class="card-statistic-3 p-4">
                             <div class="card-icon card-icon-large"><i class="fas fa-shopping-cart"></i></div>
                             <div class="mb-4">
@@ -83,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6">
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
                     <div class="card l-bg-blue-dark">
                         <div class="card-statistic-3 p-4">
                             <div class="card-icon card-icon-large"><i class="fas fa-users"></i></div>
@@ -101,13 +104,13 @@
                                 </div>
                             </div>
                             <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
+                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6">
-                    <div class="card l-bg-green-dark">
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="card l-bg-blue-dark">
                         <div class="card-statistic-3 p-4">
                             <div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
                             <h5 class="card-title mb-0">Sold accounts</h5>
@@ -125,13 +128,13 @@
                                 </div>
                             </div>
                             <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                <div class="progress-bar l-bg-orange" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6">
-                    <div class="card l-bg-orange-dark">
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="card l-bg-blue-dark">
                         <div class="card-statistic-3 p-4">
                             <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
                             <div class="mb-4">
@@ -156,6 +159,86 @@
             </div>
         </div>
     </div>
+    <h>
+    <div id="best" class="about-us container-fluid pt-10">
+        <div class="about-us-title text-center">
+            <h1><b>Why are we the Best's?</b></h1>
+        </div>
+        <div class="container-fluid">
+                <div style="margin-top:4%;" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3">
+                    <div class="col mb-4">
+                        <div class="card card-custom-2 bg-transparent border-0">
+                            <div class="card-body text-center">
+                                <h1 class="card-title"><i  style="color: #1A3B68 ;"class="fas ie fa-comments"></i></h1>
+                                <h3 class="best-title">24/7 Support</h3>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Our staff team will be able to help you out anytime if you have questions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card card-custom-2 bg-transparent border-0">
+                            <div class="card-body text-center">
+                                <h1 class="card-title"><i  style="color: #1A3B68 ;"class="fas fa-code"></i></h1>
+                                <h3 class="best-title">Modern System</h3>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>The account generator is always up to date and works at it's maximum</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card card-custom-2 bg-transparent border-0">
+                            <div class="card-body text-center">
+                                <h1 class="card-title"><i style="color: #1A3B68 ;" class="fas fa-brush"></i></h1>
+                                <h3 class="best-title">Clean Design</h3>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>With our clean design, we provide you the best user experience on our site!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3">
+                    <div class="col mb-4">
+                        <div class="card card-custom-2 bg-transparent border-0">
+                            <div class="card-body text-center">
+                                <h1 class="card-title"><i style="color: #1A3B68 ;" class="fas fa-sync-alt"></i></h1>
+                                <h3 class="best-title">Daily Refills</h3>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>The account generator refills daily to gurantee the freshest and best alts on the market!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card card-custom-2 bg-transparent border-0 ">
+                            <div class="card-body text-center">
+                                <h1 class="card-title"><i style="color: #1A3B68 ;" class="fas fa-gift"></i></h1>
+                                <h3 class="best-title">Get Gifts</h3>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Our Alt Account Generator Service is Free to use and this will never change. Never ever!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card  card-custom-2 bg-transparent border-0">
+                            <div class="card-body text-center">
+                                <h1 class="card-title"><i style="color: #1A3B68 ;" class="fas fa-check-double"></i></h1>
+                                <h3 class="best-title">Automatic Checks</h3>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Our accounts are checked daily for functionality <br><br></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>>
+</div>
 
 </div>
 <!--Waves end-->

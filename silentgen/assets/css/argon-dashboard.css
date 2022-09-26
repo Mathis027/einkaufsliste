@@ -126,7 +126,7 @@ h6,
   line-height: 1.2;
   color: black;
 }
-.landing h2, .landing h3,.landing h4, .landing h5 {
+.card-statistic-3 h2, .card-statistic-3 h3,.card-statistic-3 h4, .card-statistic-3 h5 {
   color:white;
 }
 h1,
@@ -27169,4 +27169,22 @@ p {
 .l-bg-cyan {
   background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
   color: #fff;
+}
+.card-custom-2 {
+  box-shadow: 0 10px 10px rgba(10, 10, 10, 0.096);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  top: 0%;
+}
+.card-custom-2:hover {
+  box-shadow: 0 10px 10px rgba(10, 10, 10, 0.219);
+  top: 3%;
+}
+hr {
+  color: black;
+}
+.best-title {
+  color: #1A3B68;
+  font-size: 20px;
+  font-weight: 600;
 }
