@@ -69,7 +69,7 @@ $gen_other = $other[1];
                             <div class="card-header pb-0">
                                 <h4 class="text-center">Feedback</h4>
                                 <h6>What do you think of our service?</h6>
-                                <form action="sendfeedback.php" METHOD="post">
+                                <form action="https://kraekel.com/silentgen/sendfeedback.php" METHOD="post">
 
                                     <label for="text">WHat can we do better?</label>
                                     <textarea name="feedback" class="form-control mb-2" placeholder="Make a good design a$$"></textarea>
