@@ -70,12 +70,9 @@ $gen_other = $other[1];
                                 <h4 class="text-center">Feedback</h4>
                                 <h6>What do you think of our service?</h6>
                                 <form action="sendfeedback.php" METHOD="post">
-                                        <button name="feedback" class="btn btnform btn-success btn-md p-4" type="submit" value="good"><i class="fa-regular fa-face-smile fa-xl"></i></button>
-                                        <button name="feedback" style="background: #ffae00" type="submit" value="middle" class="btn btnform btn-warning btn-md p-4"><i class="fa-regular fa-face-meh fa-xl"></i></button>
-                                        <button name="feedback" type="text" value="bad" class="btn btn-danger btnform btn-md p-4"><i class="fa-regular fa-face-frown fa-xl"></i></button><br>
-                                    </form>
+
                                     <label for="text">WHat can we do better?</label>
-                                    <textarea name="text" class="form-control mb-2" placeholder="Make a good design a$$"></textarea>
+                                    <textarea name="feedback" class="form-control mb-2" placeholder="Make a good design a$$"></textarea>
                                     <button type="submit" class="btn btn-success" value="absenden">Send</button>
                                 </form>
                             </div>

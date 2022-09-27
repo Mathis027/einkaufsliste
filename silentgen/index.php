@@ -1,23 +1,4 @@
-<?php
-require "assets/required/navbar.php";
-
-$currentaccounts = 12;
-
-if(isset($_GET["type"])) {
-    $generatorname = $_GET["type"];
-    $dbname = strtolower($_GET["type"]);
-    $filename = strtolower($generatorname) . ".txt";
-} else {
-    $generatorname = "Netflix";
-    $dbname = strtolower($generatorname);
-    $filename = strtolower($generatorname) . ".txt";
-}
-echo $generatorname;
-$instock = stockAbfrage($dbname);
-$lastupdated = lastUpdated($dbname);
-
-
-?>
+<?php require "assets/required/navbar-landing.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,152 +19,228 @@ $lastupdated = lastUpdated($dbname);
     <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
-    <!--<script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script><script>linkvertise(110463, {whitelist: ["accounts.silent-gen.com",""], blacklist: []});</script>-->
 </head>
-
-
-
-<main class="main-content ">
-    <div class="container">
-    <div class="align-items-center justify-content-center mt-5 pt-5 text-center" >
-                <div class="row">
-                    <div class="col-12" >
-                        <div class="card mb-4">
-                            <div class="card-header pb-0">
-                                <h3><?php echo $generatorname;?></h3>
-                                <br>
-                            </div>
-                                <div class="card-body px-0 pt-0 pb-2">
-                                    <p>Click to generate a new account</p>
-                                   <form method="post">
-                                        <input hidden type="text" name="generate" value="generate-new">
-                                        <button onclick="" type="submit" class="btn btn-generate btn-primary btn-md"><i class="fa-solid fa-sync fa-spin"></i>
-                                            Generate Account</button>
-                                       <br><span><?php echo $instock;?> Accounts available</span>
-                                       <div class="mb-3">
-                                           <span><b>Last updated: <?php echo $lastupdated[0];?></b></span>
-
-                                       </div>
-                                    </form>
-                                    <?php
-                                    if(isset($_POST["generate"])) {
-
-                                        $db = getDB();
-                                        $stmt = $db->query("SELECT account FROM `$dbname` ORDER BY RAND() LIMIT 1");
-                                        $link = $stmt->fetch();
-                                        echo '<a class="generate-link fs-4" target="_blank" href="https://accounts.silent-gen.com/bla/generated.php?accounts=' . urlencode($link["account"]) . '">click here</a>';
-                                    }
-
-                                    ?>
-                                </div>
-                                <div class="card-footer ">
-                                    <div class="d-flex align-items-center justify-content-end " >
-                                        <div class="col-12 col-lg-4 col-md-6">
-                                            <div  class="d-flex align-items-center justify-content-center justify-content-md-start justify-content-lg-start">
-                                                <span class="me-2 text-md font-weight-bold">Available chance</span>
-
-                                            </div>
-                                            <div class="d-flex align-items-center justify-content-start">
-                                                <span class="me-2 text-md font-weight-bold">60%</span>
-                                                <div class="col-lg-10 col-md-10 col-10">
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-
-                                        </div>
-                                    </div>
-
-                                    </div>
-                        </div>
-                                </div>
-                        </div>
+<body>
+<!--Waves Container-->
+<div class="container mt-9 mb-10">
+    <div class="col-md-4">
+        <div class="card bg-transparent p-3 mb-2 card-logo">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex flex-row align-items-center">
                 </div>
-                   <div class="card mb-4">
-                            <div class="card-header pb-0">
-                                <h6>Our Account Stats</h6>
-                            </div>
-                            <div class="card-body px-0 pt-0 pb-2">
-                                <div class="table-responsive p-0">
-                                    <table class="table align-items-center justify-content-center mb-0">
-                                        <thead>
-                                        <tr>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Service</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Current Accounts</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Available chance</th>
-                                            <th></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php foreach($lists as $list):
-                                            $listname = ucfirst($list);
-                                            $atstock = stockAbfrage($list);
-                                            ?>
+            </div>
+            <div class="mt-5">
+                <h3 class="heading" style="color: white">SILENT-GEN<br></h3><h5>Account Generator & Shop</h5>
+                <div class="mt-5">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="mt-3"> <span class="text2">Account Generator with working Accounts and love</span></span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    <div>
-                                                        <img src="assets/img/<?php echo $list ?>.png" class="avatar avatar-sm rounded-circle me-4" alt="spotify">
-                                                    </div>
-                                                    <div class="my-auto">
-                                                        <h6 class="mb-0 text-sm"><?php echo $listname; ?></h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="text-sm font-weight-bold mb-0"><?php echo $atstock; ?></p>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-sm bg-gradient-success">working</span>
-                                            </td>
-                                            <td class="align-middle text-center">
-                                                <div class="d-flex align-items-center justify-content-center">
-                                                    <span class="me-2 text-xs font-weight-bold">60%</span>
-                                                    <div>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle">
-                                                <button class="btn btn-link text-secondary mb-0">
-                                                    <i class="fa fa-ellipsis-v text-xs"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
+</div>
+<div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+    </svg>
+</div>
+<div class="white-container pt-8 container-fluid landing">
+    <div class="container" style="">
+        <div class="about-us-title text-center">
+            <h1><b>Some stats?</b></h1>
+        </div>
+        <div class="col-md-10 align-content-center mt-7">
+            <div class="row ">
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="card l-bg-blue-dark">
+                        <div class="card-statistic-3 p-4">
+                            <div class="card-icon card-icon-large"><i class="fas fa-shopping-cart"></i></div>
+                            <div class="mb-4">
+                                <h5 class="card-title mb-0">Generated accounts</h5>
+                            </div>
+                            <div class="row align-items-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h2 class="d-flex align-items-center mb-0">
+                                        30.943
+                                    </h2>
                                 </div>
+                                <div class="col-4 text-right">
+                                    <span>12.5% <i class="fa fa-arrow-up"></i></span>
+                                </div>
+                            </div>
+                            <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="30,4%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="card l-bg-blue-dark">
+                        <div class="card-statistic-3 p-4">
+                            <div class="card-icon card-icon-large"><i class="fas fa-users"></i></div>
+                            <div class="mb-4">
+                                <h5 class="card-title mb-0">Customers</h5>
+                            </div>
+                            <div class="row align-items-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h2 class="d-flex align-items-center mb-0">
+                                        2.321
+                                    </h2>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <span>9.23% <i class="fa fa-arrow-up"></i></span>
+                                </div>
+                            </div>
+                            <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="card l-bg-blue-dark">
+                        <div class="card-statistic-3 p-4">
+                            <div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
+                            <h5 class="card-title mb-0">Sold accounts</h5>
+                            <div class="mb-4">
+                                <h5 class="card-title mb-0"></h5>
+                            </div>
+                            <div class="row align-items-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h2 class="d-flex align-items-center mb-0">
+                                        145
+                                    </h2>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <span>10% <i class="fa fa-arrow-up"></i></span>
+                                </div>
+                            </div>
+                            <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="card l-bg-blue-dark">
+                        <div class="card-statistic-3 p-4">
+                            <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="mb-4">
+                                <h5 class="card-title mb-0">Discord Members</h5>
+                            </div>
+                            <div class="row align-items-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h2 class="d-flex align-items-center mb-0">
+                                        198
+                                    </h2>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <span>2.5% <i class="fa fa-arrow-up"></i></span>
+                                </div>
+                            </div>
+                            <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h>
+    <div id="best" class="about-us container-fluid pt-10">
+        <div class="about-us-title text-center">
+            <h1><b>Why are we the Best's?</b></h1>
+        </div>
+        <div class="container-fluid">
+                <div style="margin-top:4%;" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3">
+                    <div class="col mb-4">
+                        <div class="card card-custom-2 bg-transparent border-0">
+                            <div class="card-body text-center">
+                                <h1 class="card-title"><i  style="color: #1A3B68 ;"class="fas ie fa-comments"></i></h1>
+                                <h3 class="best-title">24/7 Support</h3>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Our staff team will be able to help you out anytime if you have questions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card card-custom-2 bg-transparent border-0">
+                            <div class="card-body text-center">
+                                <h1 class="card-title"><i  style="color: #1A3B68 ;"class="fas fa-code"></i></h1>
+                                <h3 class="best-title">Modern System</h3>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>The account generator is always up to date and works at it's maximum</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card card-custom-2 bg-transparent border-0">
+                            <div class="card-body text-center">
+                                <h1 class="card-title"><i style="color: #1A3B68 ;" class="fas fa-brush"></i></h1>
+                                <h3 class="best-title">Clean Design</h3>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>With our clean design, we provide you the best user experience on our site!</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
 
-</main>
-<!--   Core JS Files   -->
-<script src="assets/js/core/popper.min.js"></script>
-<script src="assets/js/core/bootstrap.min.js"></script>
-<script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
-<script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
-<script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-        var options = {
-            damping: '0.5'
-        }
-        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-</script>
-<!-- Github buttons -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="../assets/js/argon-dashboard.js?v=2.0.4"></script>
-</body>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3">
+                    <div class="col mb-4">
+                        <div class="card card-custom-2 bg-transparent border-0">
+                            <div class="card-body text-center">
+                                <h1 class="card-title"><i style="color: #1A3B68 ;" class="fas fa-sync-alt"></i></h1>
+                                <h3 class="best-title">Daily Refills</h3>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>The account generator refills daily to gurantee the freshest and best alts on the market!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card card-custom-2 bg-transparent border-0 ">
+                            <div class="card-body text-center">
+                                <h1 class="card-title"><i style="color: #1A3B68 ;" class="fas fa-gift"></i></h1>
+                                <h3 class="best-title">Get Gifts</h3>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Our Alt Account Generator Service is Free to use and this will never change. Never ever!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <div class="card  card-custom-2 bg-transparent border-0">
+                            <div class="card-body text-center">
+                                <h1 class="card-title"><i style="color: #1A3B68 ;" class="fas fa-check-double"></i></h1>
+                                <h3 class="best-title">Automatic Checks</h3>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Our accounts are checked daily for functionality <br><br></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>>
+</div>
 
-</html>
+</div>
+<!--Waves end-->
+    <?php require "assets/required/footer.php" ?>
+</body>

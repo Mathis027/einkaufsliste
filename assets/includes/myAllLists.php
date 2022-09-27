@@ -4,7 +4,7 @@ $lists = showTables();
 if(isset($_POST["list"]))  {
     $_SESSION["list"] = $_POST["list"];
     $_SESSION["listname"] = $_POST["listname"];
-    header("Location: ../index.php");
+    header("Location: ../generator.php");
 }
 function listAllLists(){
     $user = getUserData($_SESSION["id"]);

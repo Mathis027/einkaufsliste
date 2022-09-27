@@ -22,7 +22,7 @@
             </ul>
             <ul class="navbar-nav d-lg-block d-none">
                 <li class="nav-item">
-                    <a href="index.php" class="btn btn-sm mb-0 me-1 btn-primary"><i class="fa-solid fa-arrow-up-right-from-square pe-2"></i>FREE GENERATOR</a>
+                    <a href="generator.php" class="btn btn-sm mb-0 me-1 btn-primary"><i class="fa-solid fa-arrow-up-right-from-square pe-2"></i>FREE GENERATOR</a>
                 </li>
             </ul>
         </div>

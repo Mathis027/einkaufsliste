@@ -8,7 +8,7 @@ $myuser = getUserData($_SESSION["id"]);
 if($myuser["is_admin"] == 1){
     echo "Willkommen Admin " . $myuser["name"];
 }else {
-    header("Location: index.php");
+    header("Location: generator.php");
 }
 $id = $_GET["id"];
 $user = getUserData($id);

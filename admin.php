@@ -5,7 +5,7 @@ require "assets/header/navbar.php";
 require "assets/includes/css.php";
 include "assets/includes/connect.php";
 if(!isset($_SESSION["id"])) {
-    header("Location: ../index.php");
+    header("Location: ../generator.php");
 }
 $user = getUserData($_SESSION["id"]);
 
@@ -13,7 +13,7 @@ echo $user["is_admin"];
 if($user["is_admin"] == 1){
     echo "Willkommen Admin " . $user["name"];
 }else {
-    header("Location: index.php");
+    header("Location: generator.php");
 }
 
 ?>

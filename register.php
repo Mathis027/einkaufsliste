@@ -6,7 +6,7 @@ require "assets/includes/css.php";
 require "assets/includes/connect.php";
 
 if(isset($_SESSION["id"])) {
-    header("Location: index.php");
+    header("Location: generator.php");
 }
 // If the user is not logged in redirect to the login page...
 function registerUser() {
