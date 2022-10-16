@@ -20,6 +20,7 @@
                 <?php if(!isset($_SESSION["id"])){ ?>
                     <button class="btn bg-gradient-primary mb-0" onclick="window.location.href='login.php'">Login</button>
                 <?php } ?>
+                <!-- ewfj -->
                 <?php if(isset($_SESSION["id"])){ ?>
                     <button class="btn bg-gradient-primary mb-0" onclick="window.location.href='../../logout.php'">Logout</button>
                 <?php } ?>
