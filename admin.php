@@ -33,8 +33,8 @@ if($user["is_admin"] == 1){
         <h1>Admin Bereich</h1>
     </div>
 
-        <div class="table-responsive">
-            <table class="table table-hover">
+        <div class="table-responsive col-12">
+            <table class="table table-hover table-admin">
                 <thead>
                 <tr>
                     <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Name</th>
@@ -47,7 +47,7 @@ if($user["is_admin"] == 1){
         <?php
         $allusers = getAllUsers();
         foreach ($allusers AS $users): ?>
-                    <tbody>
+                    <tbody >
                     <tr>
                         <td>
                                 <div class="table-item-name">

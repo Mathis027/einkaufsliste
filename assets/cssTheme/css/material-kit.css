@@ -27522,3 +27522,6 @@ input[type=checkbox] {
 .fa-solid {
   color: white;
 }
+.table-admin td {
+  max-width: 10px;
+}
