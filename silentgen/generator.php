@@ -82,8 +82,8 @@ $lastupdated = lastUpdated($dbname);
                                 atOptions = {
                                     'key' : 'acca7a8549d727daf0347bdc665a9e0e',
                                     'format' : 'iframe',
-                                    'height' : 60,
-                                    'width' : 468,
+                                    'height' : 300,
+                                    'width' : 60,
                                     'params' : {}
                                 };
                                 document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://marketingabsentremembered.com/acca7a8549d727daf0347bdc665a9e0e/invoke.js"></scr' + 'ipt>');
