@@ -77,8 +77,8 @@ $lastupdated = lastUpdated($dbname);
 
                                     ?>
                                 </div>
-                                <script async="async" data-cfasync="false" src="//marketingabsentremembered.com/3e39aa7a16dd360f2df372a3909e2a65/invoke.js"></script>
-                                <div style="position:absolute; left: 10px; height: 400px; width: 200px " id="container-3e39aa7a16dd360f2df372a3909e2a65"></div>
+                            <script async="async" data-cfasync="false" src="//marketingabsentremembered.com/3e39aa7a16dd360f2df372a3909e2a65/invoke.js"></script>
+                            <div style="position:absolute; left: 10px; height: 400px; width: 200px " id="container-3e39aa7a16dd360f2df372a3909e2a65"></div>
                                 <div class="card-footer ">
                                     <div class="d-flex align-items-center justify-content-end " >
                                         <div class="col-12 col-lg-4 col-md-6">
