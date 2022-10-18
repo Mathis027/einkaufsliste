@@ -78,16 +78,8 @@ $lastupdated = lastUpdated($dbname);
                                     ?>
                                 </div>
                             <div style="position:absolute; top: 50%; left: 10px ">
-                                <script type="text/javascript">
-                                    atOptions = {
-                                        'key' : 'acca7a8549d727daf0347bdc665a9e0e',
-                                        'format' : 'iframe',
-                                        'height' : 100,
-                                        'width' : 500,
-                                        'params' : {}
-                                    };
-                                    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://marketingabsentremembered.com/acca7a8549d727daf0347bdc665a9e0e/invoke.js"></scr' + 'ipt>');
-                                </script>
+                                <script async="async" data-cfasync="false" src="//marketingabsentremembered.com/3e39aa7a16dd360f2df372a3909e2a65/invoke.js"></script>
+                                <div id="container-3e39aa7a16dd360f2df372a3909e2a65"></div>
                             </div>
                                 <div class="card-footer ">
                                     <div class="d-flex align-items-center justify-content-end " >
