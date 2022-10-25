@@ -1,13 +1,11 @@
 <?php
 require "assets/includes/connect.php";
-if(isset($_GET["feedback"])) {
-        $empfaenger = "mathis@kraekel.com";
+if(isset($_POST["feedback"]) and $_POST["token"] == "hfuiewhiuh29834zthuerfn34985uhrtg") {
+        $empfaenger = "feedback@silent-gen.com";
         $betreff = "Feedback";
         $from = "no-reply@silent-gen.com";
         $text = "Feedback: <br> " . $_GET["feedback"];
 
         mail($empfaenger, $betreff, $text);
         echo "Email gesendet";
-} else {
-    echo "kein fed gestzt";
 }
