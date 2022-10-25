@@ -3,7 +3,7 @@ if(isset($_POST["feedback"]) and $_POST["token"] == "hfuiewhiuh29834zthuerfn3498
         $empfaenger = "mathis@kraekel.com";
         $betreff = "Feedback";
         $from = "no-reply@silent-gen.com";
-        $text = "Feedback: von:" . $_POST["discordtag"] . " mit der Nachricht: ". $_GET["feedback"];
+        $text = "Feedback: von:" . $_POST["discordtag"] . " mit der Nachricht: ". $_POST["feedback"];
 
         mail($empfaenger, $betreff, $text);
         echo "Email gesendet";
