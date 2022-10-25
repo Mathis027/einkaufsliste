@@ -5,6 +5,6 @@ function listeLeeren() {
         $list = $_SESSION["list"];
         global $einkaufdb;
         $einkaufdb->query("DELETE FROM $list");
-        header("Location: /generator.php");
+        header("Location: /index.php");
 }
 listeLeeren();

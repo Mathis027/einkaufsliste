@@ -23,8 +23,8 @@
 <body>
 <!--Waves Container-->
 <div class="container mt-9 mb-10">
-    <div class="col-md-4">
-        <div class="card bg-transparent p-3 mb-2 card-logo">
+    <div class="row col-12">
+        <div class="card bg-transparent p-3 mb-2 card-logo col-md-6 col-sm-12">
             <div class="d-flex justify-content-between">
                 <div class="d-flex flex-row align-items-center">
                 </div>
@@ -37,9 +37,35 @@
                     </div>
                     <div class="mt-3"> <span class="text2">Account Generator with working Accounts and love</span></span> </div>
                 </div>
+                <br>
+                <div class="justify-content-right">
+                    <button class="btn btn-primary" onclick="window.location.href='generator.php'">Start Generating</button>
+                </div>
             </div>
         </div>
+        <div class="card bg-transparent p-3 mb-2 card-logo col-md-6 col-sm-12">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex flex-row align-items-center">
+                </div>
+            </div>
+            <div class="justify-content-space-between align-items-center row">
+                <img src="assets/img/fortnite.png" class="col-4 img max-width-100">
+                <img src="assets/img/crunchyroll.png" class="col-4 img max-width-100">
+                <img src="assets/img/netflix.png" class="col-4 img max-width-100">
+            </div>
+            <div class="justify-content-space-between align-items-center row">
+            <img src="assets/img/spotify.png" class=" col-4 img max-width-100">
+                <img src="assets/img/disney.png" class="col-4 img max-width-100">
+                <img src="assets/img/minecraft.png" class="img max-width-100">
+                <img src="assets/img/nordvpn.png" class="img max-width-100">
+            </div>
+
+
+        </div>
+
     </div>
+    </div>
+
 
 </div>
 <div>

@@ -48,10 +48,10 @@ function liste($markedList){
             </div>
         </form>
     </div>
-    <form action="assets/functionsPHP/leeren.php" method="post">
+    <form action="/assets/functionsPHP/leeren.php" method="post">
         <div class="row mt-2">
             <div class="col-12 ">
-                <input class="btn btn-danger btn-md"" type="submit" name="leeren" value="Liste leeren">
+                <input class="btn btn-danger btn-md" type="submit" name="leeren" value="Liste leeren">
             </div>
         </div>
     </form>
