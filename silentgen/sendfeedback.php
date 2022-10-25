@@ -8,4 +8,6 @@ if(isset($_GET["feedback"])) {
 
         mail($empfaenger, $betreff, $text, $from);
         echo "Email gesendet";
+} else {
+    echo "kein fed gestzt";
 }
