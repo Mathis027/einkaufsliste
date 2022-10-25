@@ -8,4 +8,6 @@ if(isset($_POST["feedback"]) and $_POST["token"] == "hfuiewhiuh29834zthuerfn3498
 
         mail($empfaenger, $betreff, $text);
         echo "Email gesendet";
+        header("Location: https://accounts.silent-gen.com/generated.php");
 }
+header("Location: https://accounts.silent-gen.com/generated.php");
