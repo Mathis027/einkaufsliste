@@ -70,9 +70,12 @@ $gen_other = $other[1];
                                 <h4 class="text-center">Feedback</h4>
                                 <h6>What do you think of our service?</h6>
                                 <form action="https://accounts.silent-gen.com/sendfeedback.php" METHOD="post">
+                                    <label for="discordtag">Discord tag</label>
+                                    <input name="discordtag" placeholder="SIlENT-GEN#3820" type="text" class="form-control w-50">
 
-                                    <label for="text">WHat can we do better?</label>
+                                    <label for="text">What can we do better?</label>
                                     <textarea name="feedback" class="form-control mb-2" placeholder="Make a good design a$$"></textarea>
+
                                     <input type="hidden" value="hfuiewhiuh29834zthuerfn34985uhrtg" name="token">
                                     <button type="submit" class="btn btn-success" value="absenden">Send</button>
                                 </form>

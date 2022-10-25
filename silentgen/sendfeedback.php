@@ -9,4 +9,5 @@ if(isset($_POST["feedback"]) and $_POST["token"] == "hfuiewhiuh29834zthuerfn3498
         echo "Email gesendet";
         header("Location: https://accounts.silent-gen.com/generated.php");
 } else {
+    echo "efhlewhfle";
 }
