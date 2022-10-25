@@ -6,7 +6,7 @@ if(isset($_GET["feedback"])) {
         $from = "no-reply@silent-gen.com";
         $text = "Feedback: <br> " . $_GET["feedback"];
 
-        mail($empfaenger, $betreff, $text, $from);
+        mail($empfaenger, $betreff, $text);
         echo "Email gesendet";
 } else {
     echo "kein fed gestzt";
