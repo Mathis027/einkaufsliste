@@ -11,6 +11,5 @@ if(isset($token)) {
     $list = getListFromToken($token);
     $liststring = $list["liststring"];
     addUserToList($liststring,$userid);
-    header("list/mylists.php");
 }
-#fewkjefb
+#fewkjefbd
