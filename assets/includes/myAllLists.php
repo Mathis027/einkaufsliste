@@ -2,6 +2,7 @@
 
 $lists = showTables();
 $sharedlists = showSharedTables();
+var_dump($sharedlists);
 $sharedListData = showListData($sharedlists["liststring"]);
 if(isset($_POST["list"]))  {
     $_SESSION["list"] = $_POST["list"];

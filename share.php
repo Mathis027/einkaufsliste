@@ -10,7 +10,12 @@ $userid = $_SESSION["id"];
 if(isset($token)) {
     $list = getListFromToken($token);
     $liststring = $list["liststring"];
-    addUserToList($liststring,$userid);
-    header("Location: /list/mylists.php");
+    $isadded = isListatUser($liststring, $userid);
+    if($isadded == "") {
+        addUserToList($liststring,$userid);
+        echo "Du bist erfolgreich dieser Liste beigetreten";
+    } else {
+        echo "Du bist bereits zu dieser Liste hinzugefügt";
+    }
+    //header("Location: /list/mylists.php");
 }
-#fewkjefbd

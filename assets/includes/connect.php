@@ -67,6 +67,16 @@ function showSharedTables(){
     $liststring = $strings->fetch();
     return $liststring;
 }
+function isListatUser($liststring, $userid) {
+    $getliststring = geteinkaufUsersDB();
+    $strings = $getliststring->prepare("SELECT * FROM listshare WHERE addeduser = :userid AND liststring = :liststring");
+    $strings->execute([
+        "userid" => $userid,
+        "liststring" => $liststring,
+    ]);
+    $liststring = $strings->fetch();
+    return $liststring;
+}
 function showListData($liststring){
     $getliststring = geteinkaufUsersDB();
     $strings = $getliststring->prepare("SELECT * FROM listdata WHERE liststring = :liststring");
