@@ -11,5 +11,6 @@ if(isset($token)) {
     $list = getListFromToken($token);
     $liststring = $list["liststring"];
     addUserToList($liststring,$userid);
+    header("Location: /list/mylists.php");
 }
 #fewkjefbd
