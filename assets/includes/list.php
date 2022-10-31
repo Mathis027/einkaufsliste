@@ -4,7 +4,7 @@ function liste($markedList){
      $list = $markedList;
    if($list == "") {
       header("Location: /list/mylists.php");
-}
+    }
     $einkaufdb = geteinkaufDB();
     # Abfrage der Daten
     function abfrage($list){

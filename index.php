@@ -62,7 +62,11 @@ require_once __DIR__ . "/assets/includes/list.php";
         <div id="relList">
             <?php
             $liste = $_SESSION["list"];
-            echo liste($liste);
+            if($liste !== "") {
+                echo liste($liste);
+            } else {
+                header("Location: list/mylists.php");
+            }
             ?>
         </div>
 
