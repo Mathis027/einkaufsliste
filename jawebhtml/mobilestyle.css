@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+    #myVideo {
+      display: none;
+    }
+
+    body {
+      background-image: url(./img/gtapicmicundso.jpg);
+    }
+}
