@@ -1,7 +1,7 @@
 <?php
 session_start();
 require __DIR__ . "/assets/includes/connect.php";
-if(!isset($_SESSION["id"] ) and !isset($_SESSION["list"]))  {
+if(!isset($_SESSION["list"]))  {
     header("Location: list/mylists.php");
 }
 //Überprüfe auf den 'Angemeldet bleiben'-Cookie
