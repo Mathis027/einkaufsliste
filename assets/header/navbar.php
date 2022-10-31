@@ -3,7 +3,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a href="index.php" class="navbar-brand">Einkaufsliste</a>
+        <a href="/index.php" class="navbar-brand">Einkaufsliste</a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon">
      <i class="fas fa-bars" style="color:#000; font-size:28px;"></i>
@@ -11,10 +11,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="list/mylists.php" class="nav-item nav-link">Meine Listen</a>
-                <a href="profile.php" class="nav-item nav-link">Mein Profil</a>
-                <a href="mitglieder.php" class="nav-item nav-link">Meine Mitglieder</a>
-                <a href="admin.php" id="admin_navbar_button" class="nav-item nav-link">Admin</a>
+                <a href="/list/mylists.php" class="nav-item nav-link">Meine Listen</a>
+                <a href="/profile.php" class="nav-item nav-link">Mein Profil</a>
+                <a href="/mitglieder.php" class="nav-item nav-link">Meine Mitglieder</a>
+                <a href="/admin.php" id="admin_navbar_button" class="nav-item nav-link">Admin</a>
             </div>‚
             <div class="navbar-nav ms-auto">
                 <?php if(!isset($_SESSION["id"])){ ?>

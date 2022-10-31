@@ -1,10 +1,11 @@
 <?php
+
 session_start();
 if(!isset($_SESSION["id"])) {
-    header("Location: login.php");
+    header("Location: /login.php");
 }
 require "../assets/includes/css.php";
-include "../assets/includes/connect.php";
+require "../assets/includes/connect.php";
 require "../assets/header/navbar.php";
 require "../assets/includes/myAllLists.php";
 

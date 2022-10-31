@@ -1,8 +1,10 @@
 <?php
+echo __DIR__;
+
 session_start();
-require "assets/includes/connect.php";
+require __DIR__ .  "/assets/includes/connect.php";
 if(isset($_SESSION["id"])) {
-    header("Location: list/mylists.php");
+    header("Location: /list/mylists.php");
 }
 
 if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
@@ -37,8 +39,8 @@ if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['s
     }
 }
 
-require "assets/includes/css.php";
-require "assets/header/navbar.php";
+require __DIR__ .  "/assets/includes/css.php";
+require __DIR__ .  "/assets/header/navbar.php";
 
 
 function loginUser(){

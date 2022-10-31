@@ -10,7 +10,12 @@ try {
 } catch(PDOException $e) {
     echo "Es ist ein Fehler bei der Datenbankverbindung aufgetreten: " . $e;
 }
-
+function random_string()
+{
+    $bytes = random_bytes(16);
+    $str = bin2hex($bytes);
+    return $str;
+}
 # Artikel hinzufügen 
 function geteinkaufDB(){
     global $einkaufdb;
@@ -53,6 +58,71 @@ function showTables(){
     ]);
     return $strings;
 }
+function showSharedTables(){
+    $getliststring = geteinkaufUsersDB();
+    $strings = $getliststring->prepare("SELECT liststring FROM listshare WHERE addeduser LIKE :userid");
+    $strings->execute([
+        "userid" => $_SESSION["id"],
+    ]);
+    $liststring = $strings->fetch();
+    return $liststring;
+}
+function showListData($liststring){
+    $getliststring = geteinkaufUsersDB();
+    $strings = $getliststring->prepare("SELECT * FROM listdata WHERE liststring LIKE :liststring");
+    $strings->execute([
+        "liststring" => $liststring,
+    ]);
+    return $strings;
+}
+function getListFromToken($token) {
+
+    $getList = geteinkaufUsersDB();
+    $getListToken = $getList->prepare("SELECT * FROM sharelinks WHERE sharetoken = :token");
+    $getListToken->execute([
+        "token" => $token,
+    ]);
+    $listToken = $getListToken->fetch();
+    return $listToken;
+}
+function addUserToList($liststring,$userid) {
+    $getDB = geteinkaufUsersDB();
+    $addUserToList = $getDB->prepare("INSERT INTO `listshare`(`liststring`, `addeduser`) VALUES (:liststring,:addeduser)");
+    $addUserToList->execute([
+        "liststring" => $liststring,
+        "addeduser" => $userid,
+    ]);
+}
+function newShareToken($liststring) {
+    $getDB = geteinkaufUsersDB();
+    $sharetoken = random_string();
+    $allstrings = $getDB->prepare("SELECT * FROM sharelinks WHERE sharetoken = :sharetoken");
+    $allstrings->execute([
+        "sharetoken" => $sharetoken,
+    ]);
+    $string = $allstrings->fetch();
+    while($string == $sharetoken) {
+        $sharetoken = random_string();
+        $allstrings = $getDB->prepare("SELECT * FROM sharelinks WHERE sharetoken = :sharetoken");
+        $allstrings->execute([
+            "liste" => $sharetoken,
+        ]);
+    }
+    $insert = $getDB->prepare("INSERT INTO `sharelinks`(`sharetoken`, `liststring`) VALUES (:sharetoken,:liststring)");
+    $insert->execute([
+        "sharetoken" => $sharetoken,
+        "liststring" => $liststring,
+    ]);
+    return "https://kraekel.com/share.php?token=" . $sharetoken;
+}
+
+
+
+
+
+
+
+
     # Liste leeren
 function refreshUserData($id, $email ,$name, $password) {
     $refresh = geteinkaufUsersDB();

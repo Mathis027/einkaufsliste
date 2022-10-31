@@ -169,3 +169,13 @@ function closeAlert(){
     alert.style.display="none";
 
 }
+function showShareLink(liststring) {
+    event.preventDefault();
+    let sharelist = document.getElementById(liststring)
+    if(sharelist.style.display == "none") {
+        sharelist.style.display="block";
+    } else {
+        sharelist.style.display="none";
+    }
+}
+
