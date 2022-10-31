@@ -52,7 +52,7 @@ function getAllUsers(){
 }
 function showTables(){
     $getliststring = geteinkaufUsersDB();
-    $strings = $getliststring->prepare("SELECT * FROM listdata WHERE userid LIKE :userid");
+    $strings = $getliststring->prepare("SELECT * FROM listdata WHERE userid = :userid");
     $strings->execute([
         "userid" => $_SESSION["id"],
     ]);
@@ -64,7 +64,7 @@ function showSharedTables(){
     $strings->execute([
         "userid" => $_SESSION["id"],
     ]);
-    $liststring = $strings->fetch();
+    $liststring = $strings->fetchAll();
     return $liststring;
 }
 function isListatUser($liststring, $userid) {

@@ -2,7 +2,6 @@
 
 $lists = showTables();
 $sharedlists = showSharedTables();
-var_dump($sharedlists);
 $sharedListData = showListData($sharedlists["liststring"]);
 if(isset($_POST["list"]))  {
     $_SESSION["list"] = $_POST["list"];
@@ -73,7 +72,7 @@ function listAllLists(){
     <div class="col">
         <div class="card" style="width: 18rem;">
             <div class="card-head btn-liste-loeschen">
-                <form action="../../assets/functionsPHP/loschen.php" id="deleteListForm" method="post">
+                <form action="../../assets/functionsPHP/entfernen.php" id="entfernListForm" method="post">
                     <input hidden name="liststring" value="<?php echo $rows["liststring"]; ?>">
                     <button class="btn btn-danger btn-sm" type="submit">x</button>
 
