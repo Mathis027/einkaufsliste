@@ -1,8 +1,8 @@
 <?php
 session_start();
 require __DIR__ . "/assets/includes/connect.php";
-if(!isset($_SESSION["id"])) {
-    header("Location: /login.php");
+if(!isset($_SESSION["id"] ) and !isset($_SESSION["list"]))  {
+    header("Location: list/mylists.php");
 }
 //Überprüfe auf den 'Angemeldet bleiben'-Cookie
 require __DIR__ . "/assets/includes/css.php";
@@ -62,11 +62,7 @@ require_once __DIR__ . "/assets/includes/list.php";
         <div id="relList">
             <?php
             $liste = $_SESSION["list"];
-            if($liste !== "") {
                 echo liste($liste);
-            } else {
-                header("Location: list/mylists.php");
-            }
             ?>
         </div>
 
