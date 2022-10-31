@@ -60,7 +60,7 @@ function showTables(){
 }
 function showSharedTables(){
     $getliststring = geteinkaufUsersDB();
-    $strings = $getliststring->prepare("SELECT liststring FROM listshare WHERE addeduser LIKE :userid");
+    $strings = $getliststring->prepare("SELECT * FROM listshare WHERE addeduser = :userid");
     $strings->execute([
         "userid" => $_SESSION["id"],
     ]);
@@ -69,7 +69,7 @@ function showSharedTables(){
 }
 function showListData($liststring){
     $getliststring = geteinkaufUsersDB();
-    $strings = $getliststring->prepare("SELECT * FROM listdata WHERE liststring LIKE :liststring");
+    $strings = $getliststring->prepare("SELECT * FROM listdata WHERE liststring = :liststring");
     $strings->execute([
         "liststring" => $liststring,
     ]);
