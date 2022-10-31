@@ -1,5 +1,4 @@
 <?php
-echo __DIR__;
 
 session_start();
 require __DIR__ .  "/assets/includes/connect.php";
