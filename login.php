@@ -1,12 +1,10 @@
 <?php
 
 session_start();
-echo "test";
 require __DIR__ .  "/assets/includes/connect.php";
 if(isset($_SESSION["id"])) {
     header("Location: /list/mylists.php");
 }
-echo "test";
 
 
 if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
@@ -44,6 +42,7 @@ if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['s
 require __DIR__ .  "/assets/includes/css.php";
 require __DIR__ .  "/assets/header/navbar.php";
 
+echo "test";
 
 function loginUser(){
 
