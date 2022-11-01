@@ -12,6 +12,7 @@ require "../assets/includes/myAllLists.php";
 if(isset($_POST["newlistname"])) {
     $table_name = $_POST["newlistname"];
     createNewList($table_name);
+    header("Location: /list/mylists.php");
 }
 
 ?>
