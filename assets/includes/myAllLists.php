@@ -7,6 +7,7 @@ $sharedListData = showListData($sharedlists["liststring"]);
 if(isset($_POST["list"]))  {
     $_SESSION["list"] = $_POST["list"];
     $_SESSION["listname"] = $_POST["listname"];
+    header("Location: index.php");
 }
 function listAllLists(){
     $user = getUserData($_SESSION["id"]);
