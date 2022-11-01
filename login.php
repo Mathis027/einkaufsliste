@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+echo "test";
 require __DIR__ .  "/assets/includes/connect.php";
 if(isset($_SESSION["id"])) {
     header("Location: /list/mylists.php");
