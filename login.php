@@ -17,7 +17,6 @@ if(!isset($_SESSION['id']) && isset($_COOKIE['identifier']) && isset($_COOKIE['s
         ]
     );
     $securitytoken_row = $statement->fetch();
-    echo "test";
     if($securitytoken !== $securitytoken_row['securitytoken']) {
         echo "";
     } else { //Token war korrekt
