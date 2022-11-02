@@ -66,6 +66,8 @@ function listAllLists(){
 ?>
 
     <h2>Shared Listen</h2>
+    <br>
+    <h4 style="color: orange">Warnung: Momentan gibt es ein Fehler beim anzeigen der geteilten Liste</h4>
     <?php
     foreach($sharedListData as $rows):
 
