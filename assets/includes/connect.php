@@ -64,8 +64,8 @@ function showSharedTables(){
     $strings->execute([
         "userid" => $_SESSION["id"],
     ]);
-    $liststring = $strings->fetchAll();
-    return $liststring;
+    $string = $strings->fetchAll();
+    return $string;
 }
 function isListatUser($liststring, $userid) {
     $getliststring = geteinkaufUsersDB();
@@ -74,7 +74,7 @@ function isListatUser($liststring, $userid) {
         "userid" => $userid,
         "liststring" => $liststring,
     ]);
-    $liststring = $strings->fetch();
+    $liststring = $strings;
     return $liststring;
 }
 function showListData($liststring){
@@ -83,7 +83,8 @@ function showListData($liststring){
     $strings->execute([
         "liststring" => $liststring,
     ]);
-    return $strings;
+    $list = $strings->fetchAll();
+    return $list;
 }
 function getListFromToken($token) {
 

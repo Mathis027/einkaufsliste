@@ -1,9 +1,13 @@
 <?php
 
 $lists = showTables();
+<<<<<<< HEAD
 $sharedlists = showSharedTables();
 
 $sharedListData = showListData($sharedlists["liststring"]);
+=======
+$sharedList = showSharedTables();
+>>>>>>> 20b53ac (jef)
 if(isset($_POST["list"]))  {
     $_SESSION["list"] = $_POST["list"];
     $_SESSION["listname"] = $_POST["listname"];
@@ -12,7 +16,7 @@ if(isset($_POST["list"]))  {
 function listAllLists(){
     $user = getUserData($_SESSION["id"]);
     global $lists;
-    global $sharedListData;
+    global $sharedList;
     echo '<div class="row">
         <div class="col">
             <div class="card" style="width: 18rem;">
@@ -65,13 +69,17 @@ function listAllLists(){
     endforeach;
 ?>
 
+<<<<<<< HEAD
     <h2>Shared Listen</h2>
+=======
+    <h2>Geteilte Listen</h2>
+>>>>>>> 20b53ac (jef)
     <br>
     <h4 style="color: orange">Warnung: Momentan gibt es ein Fehler beim anzeigen der geteilten Liste</h4>
     <?php
-    foreach($sharedListData as $rows):
-
-    ?>
+    foreach($sharedList as $sharedlist):;
+        var_dump(showListData($sharedlist["liststring"]));
+        ?>
     <div class="col">
         <div class="card" style="width: 18rem;">
             <div class="card-head btn-liste-loeschen">
