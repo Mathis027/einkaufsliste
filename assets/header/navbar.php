@@ -13,7 +13,6 @@
             <div class="navbar-nav">
                 <a href="/list/mylists.php" class="nav-item nav-link">Meine Listen</a>
                 <a href="/profile.php" class="nav-item nav-link">Mein Profil</a>
-                <a href="/mitglieder.php" class="nav-item nav-link">Meine Mitglieder</a>
                 <a href="/admin.php" id="admin_navbar_button" class="nav-item nav-link">Admin</a>
             </div>‚
             <div class="navbar-nav ms-auto">
