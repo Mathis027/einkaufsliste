@@ -9,7 +9,7 @@ if(isset($_POST["list"]))  {
     $_SESSION["listname"] = $_POST["listname"];
     header("Location: /index.php");
 }
-function listAllLists(){
+function listAllLists() {
     $user = getUserData($_SESSION["id"]);
     global $lists;
     global $sharedList;
@@ -75,7 +75,7 @@ function listAllLists(){
     <div class="col">
         <div class="card" style="width: 18rem;">
             <div class="card-head btn-liste-loeschen">
-                <form action="../../assets/functionsPHP/entfernen.php" id="entfernListForm" method="post">
+                <form action="../../assets/functionsPHP/sharedlistdelete.php" id="entfernListForm" method="post">
                     <input hidden name="liststring" value="<?php echo $rows["liststring"]; ?>">
                     <button class="btn btn-danger btn-sm" type="submit">x</button>
 
