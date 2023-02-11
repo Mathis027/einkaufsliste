@@ -74,7 +74,7 @@ function isListatUser($liststring, $userid) {
         "userid" => $userid,
         "liststring" => $liststring,
     ]);
-    $liststring = $strings;
+    $liststring = $strings->fetch();
     return $liststring;
 }
 function showListData($liststring){

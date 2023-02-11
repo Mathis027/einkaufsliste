@@ -56,13 +56,13 @@ function listAllLists() {
                         <button onclick="showShareLink('<?php echo $rows['liststring']; ?>')" class="btn  btn-outline-primary" >Teilen</button>
 
                     </form>
-                    <input id="<?php echo $rows["liststring"]; ?>" type="text" style="display: none;" readonly name="share-token" class="form-control form-control-lg" value="<?php echo $shareLink; ?>">
+                        <input id="<?php echo $rows["liststring"]; ?>" type="text" style="display: none;" readonly name="share-token" class="form-control form-control-lg" value="<?php echo $shareLink; ?>">
                 </div>
             </div>
         </div>
-    <?php
+<?php
     endforeach;
-    ?>
+?>
 
     <h2>Shared Listen</h2>
     <br>
@@ -70,35 +70,35 @@ function listAllLists() {
     foreach($sharedlists as $lists):
         $list = showListData($lists["liststring"]);
         $rows = $list[0];
-        ?>
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <div class="card-head btn-liste-loeschen">
-                    <form action="../../assets/functionsPHP/sharedlistdelete.php" id="entfernListForm" method="post">
-                        <input hidden name="liststring" value="<?php echo $rows["liststring"]; ?>">
-                        <button class="btn btn-danger btn-sm" type="submit">x</button>
+    ?>
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <div class="card-head btn-liste-loeschen">
+                <form action="../../assets/functionsPHP/sharedlistdelete.php" id="entfernListForm" method="post">
+                    <input hidden name="liststring" value="<?php echo $rows["liststring"]; ?>">
+                    <button class="btn btn-danger btn-sm" type="submit">x</button>
 
-                    </form>
-                </div>
-                <div class="card-body">
-                    <form method="post">
-                        <div class="mb-3">
-                            <div class="card-title input-group input-group-outline my-3">
-                                <h3><?php echo $rows["listname"]; ?></h3>
-                            </div>
+                </form>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-3">
+                        <div class="card-title input-group input-group-outline my-3">
+                            <h3><?php echo $rows["listname"]; ?></h3>
                         </div>
-                        <input hidden name="list" type="text" value="<?php echo $rows["liststring"]; ?>">
-                        <input hidden name="listname" type="text" value="<?php echo $rows["listname"]; ?>">
-                        <button type="submit" class="btn btn-primary">Zur Liste</button>
-                        <button onclick="showShareLink('<?php echo $rows['liststring']; ?>')" class="btn  btn-outline-primary" >Teilen</button>
-                    </form>
-                    <input id="<?php echo $rows["liststring"]; ?>" type="text" style="display: none;" readonly name="share-token" class="form-control form-control-lg" value="<?php echo $shareLink; ?>">
+                    </div>
+                    <input hidden name="list" type="text" value="<?php echo $rows["liststring"]; ?>">
+                    <input hidden name="listname" type="text" value="<?php echo $rows["listname"]; ?>">
+                    <button type="submit" class="btn btn-primary">Zur Liste</button>
+                    <button onclick="showShareLink('<?php echo $rows['liststring']; ?>')" class="btn  btn-outline-primary" >Teilen</button>
+                </form>
+                <input id="<?php echo $rows["liststring"]; ?>" type="text" style="display: none;" readonly name="share-token" class="form-control form-control-lg" value="<?php echo $shareLink; ?>">
 
-                </div>
             </div>
         </div>
-    <?php
-    endforeach;
+    </div>
+<?php
+endforeach;
 }?>
 
 

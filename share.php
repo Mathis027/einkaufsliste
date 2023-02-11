@@ -11,7 +11,7 @@ if(isset($token)) {
     $list = getListFromToken($token);
     $liststring = $list["liststring"];
     $isadded = isListatUser($liststring, $userid);
-    if($isadded == "") {
+    if(!$isadded) {
         addUserToList($liststring,$userid);
         echo "Du bist erfolgreich dieser Liste beigetreten";
     } else {
