@@ -6,7 +6,7 @@ $('#newArtikelForm').on('submit', function(event){
     add.disabled = true;
         $.ajax({
             type: 'POST',
-            url: 'assets/functionsPHP/newArtikel.php',
+            url: './assets/functionsPHP/newArtikel.php',
             data: $(this).serialize(),
         })
             .done(function (data){
@@ -22,14 +22,14 @@ $('#newArtikelForm').on('submit', function(event){
                 }
             })
             .fail(function (){
-                console.log("Error");
+                console.log("Error NewArtikel");
             })
 })
 $("#newListForm").on("submit", function(event) {
     event.preventDefault();
     $.ajax({
         type: 'POST',
-        url: '../assets/functionsPHP/newList.php',
+        url: './assets/functionsPHP/newList.php',
         data: $(this).serialize(),
         })
         .done(function (data){
@@ -46,7 +46,7 @@ $("#deleteListForm").on("submit", function(event) {
     event.preventDefault();
     $.ajax({
         type: 'POST',
-        url: '../assets/functionsPHP/loschen.php',
+        url: './assets/functionsPHP/loschen.php',
         data: $(this).serialize(),
     })
         .done(function (data){
@@ -63,14 +63,14 @@ $(".checkedSent").change(function(event){
     event.preventDefault();
     $.ajax({
         type: 'POST',
-        url: 'assets/functionsPHP/ChangeChecked.php',
+        url: './assets/functionsPHP/ChangeChecked.php',
         data: { checked: $(this).val() },
     })
         .done(function (data){
             $('#relList').html(data)
         })
         .fail(function (){
-            console.log("Error");
+            console.log("Error Change Checked");
         })
 })
 
@@ -78,21 +78,21 @@ $(".uncheckedSent").change(function(event){
     event.preventDefault();
     $.ajax({
         type: 'POST',
-        url: 'assets/functionsPHP/ChangeChecked.php',
+        url: './assets/functionsPHP/ChangeChecked.php',
         data: { notchecked: $(this).val() },
     })
         .done(function (data){
             $('#relList').html(data)
         })
         .fail(function (){
-            console.log("Error");
+            console.log("Error Change Checked");
         })
 })
 function changeAnzahl(anzahl, id) {
     if (anzahl == "") {
         $.ajax({
             type: 'POST',
-            url: 'assets/functionsPHP/ChangeAnzahl.php',
+            url: './assets/functionsPHP/ChangeAnzahl.php',
             data: {
                 id : id,
                 anzahl : "",
@@ -105,7 +105,7 @@ function changeAnzahl(anzahl, id) {
     } else {
         $.ajax({
             type: 'POST',
-            url: 'assets/functionsPHP/ChangeAnzahl.php',
+            url: './assets/functionsPHP/ChangeAnzahl.php',
             data: {
                 id : id,
                 anzahl : anzahl,
@@ -116,7 +116,7 @@ function changeAnzahl(anzahl, id) {
                 startAlert("Anzahl geändert", "alert-success", "alert-danger")
             })
             .fail(function (){
-                console.log("Error");
+                console.log("Error change Anzahl");
             })
     }
 }
@@ -137,7 +137,7 @@ $(".anzahlInput").on("blur", function(event){
 $(window).on("focus", function(event){
     $.ajax({
         type: 'POST',
-        url: 'assets/functionsPHP/reloadList.php',
+        url: './assets/functionsPHP/reloadList.php',
         data: $(this).serialize(),
     })
         .done(function (data){

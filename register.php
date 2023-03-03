@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-require "assets/header/navbar.php";
-require "assets/includes/css.php";
-require "assets/includes/connect.php";
+require "./assets/header/navbar.php";
+require "./assets/include/css.php";
+require "./assets/include/connect.php";
 
 if(isset($_SESSION["id"])) {
-    header("Location: index.php");
+    header("Location: ./index.php");
 }
 // If the user is not logged in redirect to the login page...
 function registerUser() {
@@ -101,7 +101,7 @@ registerUser();
                     </div>
                     <div class="card-footer py-3 border-0">
                         <div class="text-center">
-                            Already have an account? <a href="login.php" class="text-dark">Login</a>
+                            Already have an account? <a href="./login.php" class="text-dark">Login</a>
                         </div>
                     </div>
                 </div>

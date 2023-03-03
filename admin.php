@@ -1,11 +1,11 @@
 <?php
 
 session_start();
-require "assets/header/navbar.php";
-require "assets/includes/css.php";
-include "assets/includes/connect.php";
+require "./assets/header/navbar.php";
+require "./assets/include/css.php";
+include "./assets/include/connect.php";
 if(!isset($_SESSION["id"])) {
-    header("Location: index.php");
+    header("Location: ./index.php");
 }
 $user = getUserData($_SESSION["id"]);
 
@@ -13,7 +13,7 @@ echo $user["is_admin"];
 if($user["is_admin"] == 1){
     echo "Willkommen Admin " . $user["name"];
 }else {
-    header("Location: index.php");
+    header("Location: ./index.php");
 }
 
 ?>
@@ -65,7 +65,7 @@ if($user["is_admin"] == 1){
                             </div>
                         </td>
                         <td class="align-middle text-center">
-                            <form action="assets/functionsPHP/sendPasswordReset.php" method="post">
+                            <form action="./assets/functionsPHP/sendPasswordReset.php" method="post">
                                 <input  hidden name="reset-email" value="<?php echo $users['email']; ?>">
                                 <button type="submit" class="btn btn-primary btn-sm">Reset</button>
                             </form>

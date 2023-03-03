@@ -1,11 +1,11 @@
 <?php
 session_start();
 if(!isset($_SESSION["id"])) {
-    header("Location: index.php");
+    header("Location: ./index.php");
 }
-require "assets/header/navbar.php";
-require "assets/includes/css.php";
-include "assets/includes/connect.php";
+require "./assets/header/navbar.php";
+require "./assets/include/css.php";
+include "./assets/include/connect.php";
 $user = getUserData($_SESSION["id"]);
 if(isset($_POST["submit-new-data"])) {
     $name =$_POST["name"];

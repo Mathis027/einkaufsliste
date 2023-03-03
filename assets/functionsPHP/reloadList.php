@@ -1,5 +1,5 @@
 <?php
 session_start();
-require "../includes/list.php";
+require "../../assets/include/list.php";
 $list = $_SESSION["list"];
 echo liste($list);

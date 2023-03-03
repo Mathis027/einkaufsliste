@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "../includes/connect.php";
+require "../include/connect.php";
 
 if(isset($_POST["reset-email"])) {
     $email = $_POST["reset-email"];
@@ -26,5 +26,5 @@ if(isset($_POST["reset-email"])) {
     $msg = "Bitte klicke auf diesen Link um dein Passwort zurückzusetzen $link";
     mail($email, "Password Reset", $msg, $headers);
     echo "email versendet";
-    header("Location: ../../index.php");
+    header("Location: ./index.php");
 }

@@ -1,14 +1,14 @@
 <?php
 
 session_start();
-require "assets/header/navbar.php";
-require "assets/includes/css.php";
-include "assets/includes/connect.php";
+require "./assets/header/navbar.php";
+require "./assets/include/css.php";
+include "./assets/include/connect.php";
 $myuser = getUserData($_SESSION["id"]);
 if($myuser["is_admin"] == 1){
     echo "Willkommen Admin " . $myuser["name"];
 }else {
-    header("Location: index.php");
+    header("Location: ./index.php");
 }
 $id = $_GET["id"];
 $user = getUserData($id);

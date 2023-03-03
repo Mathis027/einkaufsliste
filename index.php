@@ -1,14 +1,14 @@
 <?php
 session_start();
-require __DIR__ . "/assets/includes/connect.php";
+require "./assets/include/connect.php";
 if(!isset($_SESSION["list"]))  {
-    header("Location: list/mylists.php");
+    header("Location: ./mylists.php");
 }
 //Überprüfe auf den 'Angemeldet bleiben'-Cookie
-require __DIR__ . "/assets/includes/css.php";
-require __DIR__ . "/assets/header/navbar.php";
+require "./assets/include/css.php";
+require "./assets/header/navbar.php";
 
-require_once __DIR__ . "/assets/includes/list.php";
+require_once "./assets/include/list.php";
 
 // If the user is not logged in redirect to the login page...
 ?>
@@ -28,15 +28,15 @@ require_once __DIR__ . "/assets/includes/list.php";
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
     <!-- Icons -->
-    <link href="assets/cssTheme/css/nucleo-icons.css" rel="stylesheet">
+    <link href="./assets/cssTheme/css/nucleo-icons.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 
     <!-- Core -->
-    <script src="assets/cssTheme/js/core/popper.min.js"></script>
-    <script src="assets/cssTheme/js/core/bootstrap.bundle.min.js"></script>
+    <script src="./assets/cssTheme/js/core/popper.min.js"></script>
+    <script src="./assets/cssTheme/js/core/bootstrap.bundle.min.js"></script>
     <!-- Theme JS -->
-    <link href="assets/cssTheme/css/material-kit.css" rel="stylesheet">
-    <script src="assets/cssTheme/js/material-kit.js"></script>
+    <link href="./assets/cssTheme/css/material-kit.css" rel="stylesheet">
+    <script src="./assets/cssTheme/js/material-kit.js"></script>
     <script src="https://kit.fontawesome.com/88347fd530.js" crossorigin="anonymous"></script>
 </head>
 

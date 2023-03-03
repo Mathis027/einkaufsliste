@@ -1,5 +1,5 @@
 <?php
-require "../includes/connect.php";
+require "./include/connect.php";
 
 $allartikel = geteinkaufDB()->query("SELECT * FROM Einkaufsliste_92");
 

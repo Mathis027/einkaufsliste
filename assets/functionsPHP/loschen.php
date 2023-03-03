@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "../includes/connect.php";
+require "../include/connect.php";
 function listeLoeschen() {
 
     // aus einkaufDB löschen
@@ -19,7 +19,7 @@ function listeLoeschen() {
 
 
 
-    header("Location: ../../list/mylists.php");
+    header("Location: ./mylists.php");
         // aus UserDB löschen
 }
 listeLoeschen();

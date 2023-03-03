@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once "../includes/connect.php";
-require "../includes/list.php";
+require_once "../include/connect.php";
+require "../include/list.php";
 $markedList = $_SESSION["list"];
 
 function setChecked(){

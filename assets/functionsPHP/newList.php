@@ -1,5 +1,5 @@
 <?php
-require "../includes/connect.php";
+require "../include/connect.php";
 session_start();
 function createNewList($table_name)
 {

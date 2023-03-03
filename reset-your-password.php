@@ -1,9 +1,9 @@
 <?php
 session_start();
-require "assets/includes/connect.php";
-require "assets/includes/css.php";
-require "assets/header/navbar.php";?>
-<script type="text/javascript" src="assets/js/scripts.js"></script>
+require "./assets/include/connect.php";
+require "./assets/include/css.php";
+require "./assets/header/navbar.php";?>
+<script type="text/javascript" src="./assets/js/scripts.js"></script>
 <div id="alert"  style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
     <span class="alert-text" id="alerttext">!</span>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
@@ -20,7 +20,7 @@ require "assets/header/navbar.php";?>
         <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
             <div class="card shadow-lg">
                 <div class="card-body p-5">
-                    <form method="POST" class="needs-validation" action="assets/functionsPHP/sendPasswordReset.php" novalidate="" autocomplete="on">
+                    <form method="POST" class="needs-validation" action="./assets/functionsPHP/sendPasswordReset.php" novalidate="" autocomplete="on">
                         <div class="mb-3">
                             <div class="input-group input-group-static my-3">
                                 <label>Deine Email </label>

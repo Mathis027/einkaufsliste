@@ -1,7 +1,10 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start();
-    require_once "../includes/connect.php";
-    require "../includes/list.php";
+    require_once "../include/connect.php";
+    require "../include/list.php";
 
         # Artikel definieren
 

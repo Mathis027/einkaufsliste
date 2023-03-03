@@ -1,9 +1,9 @@
 <?php
 session_start();
-require "assets/includes/connect.php";
+require "./assets/include/connect.php";
 $token = $_GET["token"];
 if(!isset($_SESSION["id"])) {
-    header("Location: /login.php");
+    header("Location: ./login.php");
 }
 
 $userid = $_SESSION["id"];
