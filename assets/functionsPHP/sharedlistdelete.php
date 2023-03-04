@@ -1,2 +1,2 @@
 <?php
-require "e";
+header("Location: ../../mylists.php");

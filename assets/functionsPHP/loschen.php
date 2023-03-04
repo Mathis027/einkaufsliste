@@ -19,7 +19,7 @@ function listeLoeschen() {
 
 
 
-    header("Location: ./mylists.php");
+    header("Location: ../../mylists.php");
         // aus UserDB löschen
 }
 listeLoeschen();
