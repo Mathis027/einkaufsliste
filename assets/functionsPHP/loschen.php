@@ -5,10 +5,10 @@ function listeLoeschen() {
 
     // aus einkaufDB löschen
         $list = $_POST["liststring"];
-        $einkaufdb = geteinkaufDB();
-        $einkaufdb->query("DROP TABLE $list ");
         $listdata = geteinkaufUsersDB();
         $listdata->query("DELETE FROM listdata WHERE liststring = '$list' ");
+        $einkaufdb = geteinkaufDB();
+        $einkaufdb->query("DROP TABLE $list ");
 
         $deleteshared = $listdata->prepare("DELETE FROM listshare WHERE addeduser = :addeduser AND liststring = :liststring");
         $deleteshared->execute([

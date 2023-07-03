@@ -29,14 +29,16 @@ function createNewList($table_name)
             ]);
             ## Liste als Liste anlegen
 
-            $getListDatabase->setAttribute(PDO :: ATTR_ERRMODE, PDO :: ERRMODE_EXCEPTION);
-            $sql = "CREATE table $liste(
-                        ListeID INT( 11 ) AUTO_INCREMENT PRIMARY KEY,
-                        userid INT( 11 ) NOT NULL,
-                        checked VARCHAR( 250 ) NOT NULL,
-                       Name VARCHAR( 100 ) NOT NULL,
-                        Anzahl VARCHAR( 150 ) NOT NULL)";
+            $getListDatabase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "CREATE TABLE $liste (
+            ListeID INT(11) AUTO_INCREMENT PRIMARY KEY,
+            userid INT(11) NOT NULL,
+            checked VARCHAR(250) NOT NULL,
+            Name VARCHAR(100) NOT NULL,
+            Anzahl VARCHAR(150) NOT NULL
+        )";
             $getListDatabase->exec($sql);
+
         }
     }
 $table_name = $_POST["newListName"];
