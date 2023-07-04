@@ -1,12 +1,12 @@
 <?php
 #Datenbankverbindung herstellen
 try {
-    $einkaufdb = new PDO('mysql:host=<ip>;dbname=<dbname>', '<username>', '<password>');
+    $einkaufdb = new PDO('mysql:host=91.218.65.223;dbname=einkauf', 'einkauf', 't1tsM295?');
 } catch(PDOException $e) {
     echo "Es ist ein Fehler bei der Datenbankverbindung aufgetreten: " . $e;
 }
 try {
-    $einkaufUsersDB = new PDO('mysql:host=<ip>;dbname=<dbname>', '<username>', '<password>');
+    $einkaufUsersDB = new PDO('mysql:host=91.218.65.223;dbname=users-einkaufsliste', 'users-einkaufsliste', '2y!Cge950');
 } catch(PDOException $e) {
     echo "Es ist ein Fehler bei der Datenbankverbindung aufgetreten: " . $e;
 }
