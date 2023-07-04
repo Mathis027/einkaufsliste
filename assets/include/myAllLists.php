@@ -9,7 +9,7 @@ if(isset($_POST["list"]))  {
     header("Location: ./index.php");
 }
 function listAllLists() {
-    $user = getUserData($_SESSION["id"]);
+    $user = getUserData($_SESSION["id"]);;
     global $lists;
     global $sharedlists;
     echo '<div class="row">

@@ -73,7 +73,7 @@ function liste($markedList){
     $abfrage = abfrage($list);
     foreach ($abfrage AS $item ) :?>
         <tr>
-            <td class="table-item-name" style="overflow: scroll; max-width: 80px">
+            <td class="table-item-name" >
 
 
                 <?php echo $item["Name"] ?></td>
@@ -102,8 +102,6 @@ function liste($markedList){
         <th scope="row"></th>
         <th scope="row"></th>
     </tr>
-    </thead>
-    <tbody>
     <!-- Listen Start HTML -->
 
 

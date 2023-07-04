@@ -22,9 +22,10 @@ if(isset($_POST["reset-email"])) {
         "Reply-To: support@kraekel.com" . "\r\n" .
         "X-Mailer: PHP/" . phpversion();
 
-    $link = "https://kraekel.com/reset-password.php?token=$newpasswordToken&email=$email";
+    $link = "https://kraekel.com/projects/demos/einkaufsliste/reset-password.php?token=$newpasswordToken&email=$email";
     $msg = "Bitte klicke auf diesen Link um dein Passwort zurückzusetzen $link";
     mail($email, "Password Reset", $msg, $headers);
     echo "email versendet";
     header("Location: ../../index.php");
 }
+///

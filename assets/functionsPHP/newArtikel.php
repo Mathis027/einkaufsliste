@@ -11,9 +11,12 @@ session_start();
     $artikel = $_POST["artikel"];
     $markedList = $_SESSION["list"];
     if(!empty($artikel)){
-        $absenden = geteinkaufDB()->prepare("INSERT INTO $markedList (Name) VALUES (:name)");
+        $absenden = geteinkaufDB()->prepare("INSERT INTO $markedList (Name, userid, checked, Anzahl) VALUES (:name, :userid, :checked, :anzahl)");
         $absenden->execute([
             "name" => $artikel,
+            "userid" => $_SESSION["id"],
+            "checked" => "",
+            "anzahl" => 1,
         ]);
 
         echo liste($markedList);

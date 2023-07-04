@@ -8,7 +8,7 @@ $headers .= "From: no-reply@kraekel.com" . "\r\n" .
 
 $email = "matilolig@gmail.com";
 $newpasswordToken = "e";
-$link = "https://kraekel.com/reset-password?token=$newpasswordToken";
+$link = "https://kraekel.com/projects/demos/einkaufsliste/reset-password?token=$newpasswordToken";
 $msg = "Bitte klicke auf diesen Link um dein Passwort zurückzusetzen $link";
 mail($email, "Password Reset", $msg, $headers);
 $from = "From: Vorname Nachname <Mathis@kraekel.com>";
