@@ -124,7 +124,7 @@ function newShareToken($liststring) {
         "sharetoken" => $sharetoken,
         "liststring" => $liststring,
     ]);
-    return "https://kraekel.com/share.php?token=" . $sharetoken;
+    return "https://kraekel.com/projects/demos/einkaufsliste/share.php?token=" . $sharetoken;
 }
 
 
