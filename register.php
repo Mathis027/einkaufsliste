@@ -8,8 +8,10 @@ require "./assets/include/connect.php";
 if(isset($_SESSION["id"])) {
     header("Location: ./index.php");
 }
+$error = "";
 // If the user is not logged in redirect to the login page...
 function registerUser() {
+    if(isset($_GET["register"])) {
     if($_GET["register"] == 1){
         $name = $_POST["register-name"];
         $email = $_POST["register-email"];
@@ -54,6 +56,7 @@ function registerUser() {
         }
     }
 
+}
 }
 registerUser();
 ?>
